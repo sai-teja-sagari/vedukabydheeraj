@@ -1,0 +1,33 @@
+/* Fonts used by FeaturedHighlights: Poppins (eyebrow), Playfair Display italic (word overlays) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+.veduka-highlights {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-highlights__word {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Hide the scrollbar visually while keeping native scroll/keyboard behavior */
+.veduka-highlights__scroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.veduka-highlights__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.veduka-highlights__card,
+.veduka-highlights__fab {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-highlights * {
+    transition-duration: 0.01ms !important;
+  }
+}

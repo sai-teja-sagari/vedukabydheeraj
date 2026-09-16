@@ -1,0 +1,45 @@
+/* Fonts used by StoryPopup: Poppins (UI), Playfair Display (headline) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+.veduka-popup {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-popup__headline {
+  font-family: 'Playfair Display', serif;
+}
+
+.veduka-popup__backdrop {
+  animation: veduka-popup-fade 220ms ease;
+}
+
+.veduka-popup__card {
+  animation: veduka-popup-scale-in 220ms ease;
+}
+
+@keyframes veduka-popup-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes veduka-popup-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-popup__backdrop,
+  .veduka-popup__card {
+    animation: none;
+  }
+}

@@ -1,0 +1,24 @@
+/* Fonts used by the Footer: Poppins for UI text, Cormorant Garamond (italic) for the tagline */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Cormorant+Garamond:ital@1&display=swap');
+
+.veduka-footer {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-footer__tagline {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.veduka-footer__social {
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.veduka-footer__link {
+  transition: color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-footer * {
+    transition-duration: 0.01ms !important;
+  }
+}
