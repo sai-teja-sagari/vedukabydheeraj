@@ -1,15 +1,11 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 import templePhoto from '../Images/highlights/06_temple_maternity.png';
 
-// TODO: replace with the real business WhatsApp number.
-const WHATSAPP_LINK = 'https://wa.me/919876543210';
+const WHATSAPP_LINK = 'https://wa.me/919133002002';
 
 // This component relies on 'Poppins' + 'Playfair Display' already being
-// loaded — Contact.jsx (the only place this renders, per the placement
-// requirement) imports both via Contact.css. If BookingCTA is ever rendered
-// somewhere that doesn't already load those fonts, add the same @import
-// used in Contact.css/PortfolioPage.css so this doesn't silently fall back
-// to the default sans/serif.
+// loaded — both are imported once, globally, via src/app/globals.css.
 
 const FEATURE_PILLS = ['Instant PDF Estimate', 'Direct Date Lock', 'Fast WhatsApp Follow-up'];
 
@@ -74,12 +70,12 @@ function BookingCTA() {
               Reserve Your Dates
             </span>
 
-            <h1
+            <h2
               id="booking-cta-heading"
               className="mt-5 font-[Playfair_Display] text-[28px] leading-[1.15] text-[#241C12] lg:text-[46px]"
             >
               Turn your wedding dates into a cinematic plan.
-            </h1>
+            </h2>
 
             <p className="mt-4 max-w-[480px] text-[13px] leading-[1.7] text-[#5C5142] lg:text-base">
               Popular wedding dates book quickly across South India. Available for destination &amp; luxury
@@ -128,7 +124,7 @@ function BookingCTA() {
             <div className="mt-7 flex flex-col gap-3 lg:flex-row lg:gap-4">
               {/* Package Estimator — see src/Components/Estimator/EstimatorPage.jsx */}
               <Link
-                to="/estimator"
+                href="/estimator"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0F2A1E] px-8 py-4 text-sm font-semibold text-[#FBF6EC] hover:opacity-90 lg:w-auto"
               >
                 Configure Proposal
@@ -183,11 +179,12 @@ function BookingCTA() {
 
             {/* Photo panel */}
             <div className="relative h-[260px] overflow-hidden rounded-2xl lg:h-full">
-              <img
+              <Image
                 src={templePhoto}
                 alt="Bride and groom in a red saree and white kurta standing before a heritage temple gopuram"
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(20,15,10,0.88)_20%,rgba(20,15,10,0.05)_55%)]" />
 
@@ -201,7 +198,8 @@ function BookingCTA() {
                   A premium way to start the booking conversation.
                 </h2>
                 <p className="mt-2 text-[13px] leading-[1.6] text-[#E5D9C4]">
-                  This section feels like a luxury appointment card, not a generic contact form.
+                  Share your dates and vision — we&apos;ll turn them into a proposal as considered as the
+                  celebration itself.
                 </p>
 
                 <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-[#7FC29B]">

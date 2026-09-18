@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import '../Styles/Hero.css';
+import Link from 'next/link';
+import Image from 'next/image';
 import heroPhoto from '../Images/Front-page.jpg';
 import accentPhoto from '../Images/image.png';
 
@@ -69,15 +69,15 @@ function Hero() {
 
           {/* ===== CTA BUTTONS ===== */}
           <div className="mt-7 flex flex-col gap-4 lg:flex-row lg:items-center">
-            <a
-              href="#book"
+            <Link
+              href="/estimator"
               className="veduka-hero__cta inline-flex items-center justify-center gap-2 rounded-full bg-[#0F2A1E] px-[30px] py-4 text-sm font-medium text-[#FBF6EC] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F2A1E] focus-visible:ring-offset-2"
             >
               Select your package
               <ArrowIcon />
-            </a>
+            </Link>
             <Link
-              to="/portfolio"
+              href="/portfolio"
               className="veduka-hero__cta inline-flex items-center justify-center rounded-full border border-[#C9A227] px-[30px] py-4 text-sm font-medium text-[#8A6A1F] hover:bg-[#C9A227]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A227] focus-visible:ring-offset-2"
             >
               View portfolio
@@ -102,19 +102,24 @@ function Hero() {
         <div className="relative h-[300px] w-full lg:h-[600px]">
           {/* Main photo */}
           <div className="absolute right-0 top-0 h-[280px] w-[230px] overflow-hidden rounded-md border-[6px] border-[#FBF6EC] shadow-lg ring-1 ring-[#DCC98F] lg:h-[520px] lg:w-[420px]">
-            <img
+            <Image
               src={heroPhoto}
               alt="Bride and groom during their wedding celebration"
-              className="h-full w-full object-cover"
+              fill
+              priority
+              sizes="(min-width: 1024px) 420px, 230px"
+              className="object-cover"
             />
           </div>
 
           {/* Accent photo */}
           <div className="absolute bottom-0 left-0 h-[160px] w-[140px] overflow-hidden rounded-md border-[6px] border-[#FBF6EC] shadow-lg ring-1 ring-[#DCC98F] lg:h-[270px] lg:w-[230px]">
-            <img
+            <Image
               src={accentPhoto}
               alt="Candid moment from a wedding celebration"
-              className="h-full w-full object-cover"
+              fill
+              sizes="(min-width: 1024px) 230px, 140px"
+              className="object-cover"
             />
           </div>
 

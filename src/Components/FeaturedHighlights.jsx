@@ -1,5 +1,7 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
-import '../Styles/FeaturedHighlights.css';
+import Image from 'next/image';
 import Lightbox from './Lightbox';
 import justUsPhoto from '../Images/highlights/05_bw_watercolor_kick.png';
 import momentsPhoto from '../Images/highlights/04_falling_in_love.png';
@@ -12,8 +14,7 @@ import enchantedPhoto from '../Images/highlights/01_red_dress_beach.png';
 import smittenPhoto from '../Images/highlights/03_dance_dip.png';
 import beginningsPhoto from '../Images/highlights/02_pre_wedding_splash.png';
  
-// TODO: replace with the real business WhatsApp number.
-const WHATSAPP_LINK = 'https://wa.me/919876543210';
+const WHATSAPP_LINK = 'https://wa.me/919133002002';
 
 // NOTE: most cards below still show the gradient + camera-icon placeholder.
 // To add a real photo to a card (existing or new), import the image file and
@@ -242,17 +243,19 @@ function FeaturedHighlights() {
               }
               className="veduka-highlights__card relative block shrink-0 snap-center overflow-hidden rounded-[20px] border-0 bg-transparent p-0 text-left w-[240px] h-[350px] md:snap-start md:w-[290px] md:h-[560px]"
             >
-              {/* Photo layer — renders a real <img> once a card has an `image` field,
+              {/* Photo layer — renders a real photo once a card has an `image` field,
                   otherwise falls back to the gradient + camera-icon placeholder.
                   `focalPoint`/`zoom` let a specific photo be cropped tighter or
                   repositioned so it fills the tall frame without visible
                   baked-in whitespace from the source image. */}
               {card.image ? (
-                <img
+                <Image
                   src={card.image}
                   alt={card.alt}
+                  fill
+                  sizes="(min-width: 768px) 290px, 240px"
                   style={card.focalPoint ? { objectPosition: card.focalPoint } : undefined}
-                  className={`absolute inset-0 h-full w-full object-cover ${card.zoom ?? ''} ${
+                  className={`object-cover ${card.zoom ?? ''} ${
                     isEdge ? 'opacity-[0.55] grayscale-[40%]' : ''
                   }`}
                 />

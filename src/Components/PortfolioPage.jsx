@@ -1,16 +1,11 @@
+'use client';
+
 import { useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import '../Styles/PortfolioPage.css';
-import { photos, categories } from '../Data/photos';
+import Image from 'next/image';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { photos, categories } from '../lib/photos';
 import Lightbox from './Lightbox';
 import BackButton from './BackButton';
-
-// ROUTER NOTE: this page is a standalone route, not a homepage section — it
-// needs to be registered in the router config (src/App.jsx), e.g.:
-//   import PortfolioPage from './Components/PortfolioPage.jsx';
-//   <Route path="/portfolio" element={<PortfolioPage/>} />
-// and the Navbar's "Portfolio" link (src/Components/Navbar.jsx) should point
-// `to: '/portfolio'` (a real route change) instead of a same-page anchor.
 
 const CATEGORY_PARAM = 'category';
 
@@ -19,7 +14,8 @@ function getValidCategory(value, categoryKeys) {
 }
 
 function PortfolioPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const categoryKeys = useMemo(() => categories.map((c) => c.key), []);
 
   // Lazy initializer so the first render already reflects the URL — avoids a
@@ -39,7 +35,7 @@ function PortfolioPage() {
     // The lightbox index is only meaningful within the previously filtered
     // set — close it rather than let it point at the wrong photo.
     setLightboxIndex(null);
-    setSearchParams(key === 'all' ? {} : { [CATEGORY_PARAM]: key });
+    router.push(key === 'all' ? '/portfolio' : `/portfolio?${CATEGORY_PARAM}=${key}`);
   };
 
   return (
@@ -106,8 +102,15 @@ function PortfolioPage() {
             onClick={() => setLightboxIndex(index)}
             className="veduka-portfolio__card group rounded-sm border border-[#EEE6D2] bg-white p-[14px_14px_30px] text-left shadow-[0_4px_14px_rgba(36,28,18,0.06)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(36,28,18,0.12)]"
           >
-            <div className="aspect-[4/5] w-full overflow-hidden">
-              <img src={photo.src} alt={photo.alt} loading="lazy" className="h-full w-full object-cover" />
+            <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <p className="veduka-portfolio__caption mt-4 text-center text-[15px] italic text-[#9C7620]">
               {photo.caption}

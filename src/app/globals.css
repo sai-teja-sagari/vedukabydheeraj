@@ -1,0 +1,305 @@
+/* Combined Google Fonts request for every weight/style used across the site
+   (previously duplicated per-component under Vite) — Poppins (UI text),
+   Playfair Display (headings/captions, normal + italic), Dancing Script
+   (Hero's script accent line), Cormorant Garamond italic (Footer tagline).
+   Must precede @import "tailwindcss" below — CSS requires all @import rules
+   to come first, and Tailwind's import expands into real rules at build time. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@700&family=Cormorant+Garamond:ital@1&display=swap');
+
+@import "tailwindcss";
+
+/* ===== Contact ===== */
+.veduka-contact {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-contact__heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.veduka-contact__chip {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.veduka-contact__input {
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-contact * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== FeaturedHighlights ===== */
+.veduka-highlights {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-highlights__word {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Hide the scrollbar visually while keeping native scroll/keyboard behavior */
+.veduka-highlights__scroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.veduka-highlights__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.veduka-highlights__card,
+.veduka-highlights__fab {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-highlights * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Footer ===== */
+.veduka-footer {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-footer__tagline {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.veduka-footer__social {
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+.veduka-footer__link {
+  transition: color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-footer * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Hero ===== */
+.veduka-hero {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-hero__headline,
+.veduka-hero__stat-number,
+.veduka-hero__badge-number {
+  font-family: 'Playfair Display', serif;
+}
+
+.veduka-hero__script {
+  font-family: 'Dancing Script', cursive;
+}
+
+.veduka-hero__cta {
+  transition: background-color 200ms ease, border-color 200ms ease, opacity 200ms ease;
+}
+
+.veduka-hero__placeholder {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-hero * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Navbar ===== */
+.veduka-navbar {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Underline that sits under each nav link, animated via transform for GPU-friendly motion */
+.veduka-navbar__underline {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 300ms ease;
+}
+
+.veduka-navbar__link:hover .veduka-navbar__underline,
+.veduka-navbar__link:focus-visible .veduka-navbar__underline,
+.veduka-navbar__underline--active {
+  transform: scaleX(1);
+}
+
+/* Mobile full-screen overlay: fades + slides in/out instead of mount/unmount so exit transitions play */
+.veduka-navbar__overlay {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 280ms ease, transform 280ms ease, visibility 280ms ease;
+}
+
+.veduka-navbar__overlay--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hamburger -> X transform */
+.veduka-navbar__bar {
+  transition: transform 250ms ease, opacity 250ms ease;
+}
+
+.veduka-navbar__bar--top-open {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.veduka-navbar__bar--mid-open {
+  opacity: 0;
+}
+
+.veduka-navbar__bar--bottom-open {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Respect prefers-reduced-motion: strip transitions/animations everywhere in the navbar */
+@media (prefers-reduced-motion: reduce) {
+  .veduka-navbar *,
+  .veduka-navbar__overlay {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ===== PortfolioPage (also used by EstimatorPage, which shares its header/card look) ===== */
+.veduka-portfolio {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-portfolio__heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.veduka-portfolio__caption,
+.veduka-lightbox__caption {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Hide the scrollbar visually while keeping native scroll/keyboard behavior,
+   so the filter row can scroll horizontally on narrow screens without a
+   visible scrollbar breaking the pill-row look. */
+.veduka-portfolio__filters {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.veduka-portfolio__filters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gentle mount-in fade for grid cards — combined with keying cards on the
+   active category (see PortfolioPage.jsx), this replays on every filter
+   change instead of only for photos newly entering the set. */
+@keyframes veduka-portfolio-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.veduka-portfolio__card {
+  animation: veduka-portfolio-fade-in 180ms ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-portfolio__card {
+    animation-duration: 0.01ms !important;
+  }
+
+  .veduka-portfolio * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Services ===== */
+.veduka-services {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-services__heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-services * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== StoryPopup ===== */
+.veduka-popup {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-popup__headline {
+  font-family: 'Playfair Display', serif;
+}
+
+.veduka-popup__backdrop {
+  animation: veduka-popup-fade 220ms ease;
+}
+
+.veduka-popup__card {
+  animation: veduka-popup-scale-in 220ms ease;
+}
+
+@keyframes veduka-popup-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes veduka-popup-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-popup__backdrop,
+  .veduka-popup__card {
+    animation: none;
+  }
+}
+
+/* ===== Package Estimator ===== */
+/* Hide the stepper's scrollbar on mobile while keeping native scroll —
+   a 9-step flow must scroll horizontally, never wrap to multiple rows. */
+.veduka-estimator__stepper {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.veduka-estimator__stepper::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veduka-estimator__bar * {
+    transition-duration: 0.01ms !important;
+  }
+}

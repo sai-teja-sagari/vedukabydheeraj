@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 import logo from '../Images/veduka_by_dheeraj_ultraHD_transparent.png';
-import '../Styles/Footer.css';
 
 // "Portfolio" and "Contact" are real separate routes; the rest are anchors
 // on the homepage.
@@ -12,14 +12,14 @@ const QUICK_LINKS = [
   { label: 'Contact', to: '/contact' },
 ];
 
-// NOTE: studio address, phone, and email below are placeholder values —
-// replace with the real business details before shipping.
+// NOTE: studio address and email below are placeholder values — replace
+// with the real business details before shipping.
 const CONTACT = {
   address: ['4-15, Celebration Street,', 'Jubilee Hills, Hyderabad 500033'],
-  phone: '+91 98765 43210',
-  phoneHref: 'tel:+919876543210',
-  whatsappHref: 'https://wa.me/919876543210',
-  email: 'vedukasai@gmail.com',
+  phone: '+91 91330 02002',
+  phoneHref: 'tel:+919133002002',
+  whatsappHref: 'https://wa.me/919133002002',
+  email: 'vedukabydheeraj@gmail.com',
 };
 
 const SOCIAL_LINKS = [
@@ -93,7 +93,7 @@ function Footer() {
         <div className="grid grid-cols-1 gap-14 text-center md:grid-cols-[1.3fr_1fr_1.2fr] md:gap-[60px] md:text-left">
           {/* ===== BRAND COLUMN ===== */}
           <div className="flex flex-col items-center md:items-start">
-            <img src={logo} alt="Veduka by Dheeraj" className="h-[46px] md:h-[52px] w-auto" />
+            <Image src={logo} alt="Veduka by Dheeraj" className="h-[46px] md:h-[52px] w-auto" />
 
             <p className="veduka-footer__tagline mt-5 max-w-[260px] italic leading-[1.6] text-[#6B5A42] md:max-w-[300px]">
               Turning your biggest moments into timeless memories, one frame at a time.
@@ -124,7 +124,7 @@ function Footer() {
               {QUICK_LINKS.map(({ label, to }) => (
                 <li key={label}>
                   <Link
-                    to={to}
+                    href={to}
                     className="veduka-footer__link text-[14px] text-[#4A3B2A] hover:text-[#9C7620] md:text-[15px]"
                   >
                     {label}

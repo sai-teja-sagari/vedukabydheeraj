@@ -1,4 +1,4 @@
-import '../Styles/Services.css';
+import Link from 'next/link';
 
 const iconProps = {
   viewBox: '0 0 32 32',
@@ -62,26 +62,31 @@ const SERVICES = [
     Icon: EngagementIcon,
     title: 'Engagement',
     description: 'Candid frames of the moment two families become one.',
+    href: '/wedding-photography',
   },
   {
     Icon: CameraIcon,
     title: 'Pre & Post Wedding',
     description: 'Dreamy sessions before and after the big celebration.',
+    href: '/pre-wedding-photography',
   },
   {
     Icon: WeddingIcon,
     title: 'Wedding',
     description: 'Every ritual, every tear, every laugh — captured in full.',
+    href: '/wedding-photography',
   },
   {
     Icon: MaternityIcon,
     title: 'Maternity Shoot',
     description: 'Gentle, glowing portraits of life about to begin.',
+    href: '/portfolio?category=maternity',
   },
   {
     Icon: CakeIcon,
     title: 'Birthday & Born Baby Shoots',
     description: 'Milestones and tiny toes, celebrated in style.',
+    href: '/birthday-photography',
   },
 ];
 
@@ -117,10 +122,11 @@ function Services() {
 
       {/* ===== CARDS ===== */}
       <div className="grid grid-cols-1 gap-[14px] lg:grid-cols-5 lg:gap-[22px]">
-        {SERVICES.map(({ Icon, title, description }) => (
-          <div
+        {SERVICES.map(({ Icon, title, description, href }) => (
+          <Link
             key={title}
-            className="flex items-center gap-4 rounded-md border border-[#E9DCBB] bg-[#F5EDDC] p-5 text-left lg:flex-col lg:gap-0 lg:px-5 lg:py-9 lg:text-center"
+            href={href}
+            className="flex items-center gap-4 rounded-md border border-[#E9DCBB] bg-[#F5EDDC] p-5 text-left transition-colors duration-150 hover:border-[#C9A227] lg:flex-col lg:gap-0 lg:px-5 lg:py-9 lg:text-center"
           >
             <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#EDE1C4] text-[#9C7620] lg:mb-[22px] lg:h-[74px] lg:w-[74px]">
               <Icon />
@@ -131,8 +137,18 @@ function Services() {
                 {description}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
+      </div>
+
+      <div className="mt-8 flex justify-center gap-5 text-[12px] font-medium uppercase tracking-[0.1em] text-[#8A6A1F] lg:mt-10">
+        <Link href="/wedding-cinematography" className="hover:underline">
+          Wedding Cinematography
+        </Link>
+        <span className="text-[#DCC98F]">·</span>
+        <Link href="/event-photography" className="hover:underline">
+          View All Services
+        </Link>
       </div>
     </section>
   );

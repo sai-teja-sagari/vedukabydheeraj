@@ -1,7 +1,10 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import logo from '../Images/veduka_by_dheeraj_ultraHD_transparent.png';
-import '../Styles/Navbar.css';
 
 // "Portfolio" and "Contact" are real separate routes; the rest are anchors
 // on the homepage.
@@ -16,14 +19,14 @@ const NAV_LINKS = [
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false); // defaults closed - no hydration flash
   const [activeLink, setActiveLink] = useState('Home');
-  const location = useLocation();
+  const pathname = usePathname();
 
   // Navbar is shared across routes, so derive the Portfolio/Contact
   // highlight from the actual URL rather than only from local click state.
   const currentActive =
-    location.pathname === '/contact'
+    pathname === '/contact'
       ? 'Contact'
-      : location.pathname === '/portfolio'
+      : pathname === '/portfolio'
       ? 'Portfolio'
       : activeLink;
 
@@ -96,8 +99,8 @@ function Navbar() {
         aria-label="Main navigation"
         className="hidden lg:flex h-[104px] items-center justify-between bg-[#FBF6EC] border-b border-[#DCC98F] px-16"
       >
-        <Link to="/" onClick={() => setActiveLink('Home')} aria-label="Veduka by Dheeraj home">
-          <img src={logo} alt="Veduka by Dheeraj" className="h-[58px] w-auto" />
+        <Link href="/" onClick={() => setActiveLink('Home')} aria-label="Veduka by Dheeraj home">
+          <Image src={logo} alt="Veduka by Dheeraj" priority className="h-[58px] w-auto" />
         </Link>
 
         <div className="flex items-center gap-11">
@@ -106,7 +109,7 @@ function Navbar() {
             return (
               <Link
                 key={label}
-                to={to}
+                href={to}
                 onClick={() => setActiveLink(label)}
                 className={`veduka-navbar__link relative pb-2 text-[13px] font-medium uppercase tracking-[0.15em] transition-colors ${
                   isActive ? 'text-[#8A6A1F]' : 'text-[#4A3B2A] hover:text-[#8A6A1F]'
@@ -125,12 +128,12 @@ function Navbar() {
         </div>
 
         {/* ===== CTA BUTTON (desktop) ===== */}
-        <a
-          href="#book"
+        <Link
+          href="/estimator"
           className="rounded-full bg-[#C9A227] px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.15em] text-[#FBF6EC] transition-colors hover:bg-[#B08D1F]"
         >
           Select your package
-        </a>
+        </Link>
       </nav>
 
       {/* ===== MOBILE BAR (< lg) ===== */}
@@ -138,8 +141,8 @@ function Navbar() {
         aria-label="Main navigation"
         className="lg:hidden flex h-[78px] items-center justify-between bg-[#FBF6EC] border-b border-[#DCC98F] px-6"
       >
-        <Link to="/" onClick={() => setActiveLink('Home')} aria-label="Veduka by Dheeraj home">
-          <img src={logo} alt="Veduka by Dheeraj" className="h-[34px] w-auto" />
+        <Link href="/" onClick={() => setActiveLink('Home')} aria-label="Veduka by Dheeraj home">
+          <Image src={logo} alt="Veduka by Dheeraj" className="h-[34px] w-auto" />
         </Link>
 
         <button
@@ -180,8 +183,8 @@ function Navbar() {
       >
         <div ref={panelRef} className="flex h-full flex-col">
           <div className="flex h-[78px] items-center justify-between px-6">
-            <Link to="/" onClick={() => handleLinkClick('Home')} aria-label="Veduka by Dheeraj home">
-              <img src={logo} alt="Veduka by Dheeraj" className="h-[34px] w-auto" />
+            <Link href="/" onClick={() => handleLinkClick('Home')} aria-label="Veduka by Dheeraj home">
+              <Image src={logo} alt="Veduka by Dheeraj" className="h-[34px] w-auto" />
             </Link>
             <button
               type="button"
@@ -208,7 +211,7 @@ function Navbar() {
             {NAV_LINKS.map(({ label, to }) => (
               <Link
                 key={label}
-                to={to}
+                href={to}
                 onClick={() => handleLinkClick(label)}
                 className="w-[220px] border-b border-[#E9DCC0] py-4 text-center text-[17px] font-medium uppercase tracking-[0.1em] text-[#4A3B2A] hover:text-[#8A6A1F]"
               >
@@ -217,13 +220,13 @@ function Navbar() {
             ))}
 
             {/* ===== CTA BUTTON (mobile overlay) ===== */}
-            <a
-              href="#book"
+            <Link
+              href="/estimator"
               onClick={closeMenu}
               className="mt-10 rounded-full bg-[#C9A227] px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.15em] text-[#FBF6EC] transition-colors hover:bg-[#B08D1F]"
             >
               Select your package
-            </a>
+            </Link>
           </div>
         </div>
       </div>

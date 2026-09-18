@@ -1,4 +1,7 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 const SWIPE_THRESHOLD_PX = 50;
 
@@ -52,9 +55,14 @@ function Lightbox({ photos, startIndex, onClose }) {
 
     const nextSrc = photos[(index + 1) % photos.length].src;
     const prevSrc = photos[(index - 1 + photos.length) % photos.length].src;
+    // `photo.src` is a Next.js static-import object ({ src, width, height }),
+    // not a plain URL — pull the actual URL string out before preloading.
+    // Uses `window.Image` (not the bare `Image` identifier) since this file
+    // also imports the `Image` component from next/image, which would
+    // otherwise shadow the native browser constructor.
     [nextSrc, prevSrc].forEach((src) => {
-      const preloadImg = new Image();
-      preloadImg.src = src;
+      const preloadImg = new window.Image();
+      preloadImg.src = src.src;
     });
   }, [index, photos, canNavigate]);
 
@@ -171,9 +179,10 @@ function Lightbox({ photos, startIndex, onClose }) {
             </button>
           )}
 
-          <img
+          <Image
             src={photo.src}
             alt={photo.alt}
+            sizes="90vw"
             className="max-h-[65vh] w-auto max-w-full object-contain lg:max-h-[75vh]"
           />
 

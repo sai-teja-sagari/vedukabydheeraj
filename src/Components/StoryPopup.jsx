@@ -1,6 +1,7 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import '../Styles/StoryPopup.css';
+import { usePathname } from 'next/navigation';
 
 // How far down the page (as a fraction of total scroll height) the visitor
 // must reach before the popup fires. 0.58 (~58%) is a starting guess — tune
@@ -8,9 +9,8 @@ import '../Styles/StoryPopup.css';
 // this early, a long one may need a lower ratio to fire at a sane scroll depth.
 const SCROLL_TRIGGER_RATIO = 0.58;
 
-// TODO: replace with the real business WhatsApp number + desired prefilled message.
 const WHATSAPP_LINK =
-  "https://wa.me/919876543210?text=Hi!%20I'd%20love%20to%20know%20more%20about%20your%20photography%20packages";
+  "https://wa.me/919133002002?text=Hi!%20I'd%20love%20to%20know%20more%20about%20your%20photography%20packages";
 
 const CloseIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -41,7 +41,7 @@ const WhatsAppIcon = ({ className }) => (
 
 function StoryPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   const cardRef = useRef(null);
   const closeButtonRef = useRef(null);

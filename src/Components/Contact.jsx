@@ -1,18 +1,17 @@
+'use client';
+
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import '../Styles/Contact.css';
 import BookingCTA from './BookingCTA';
 import BackButton from './BackButton';
-import { sanitizeByField, validateField, inputClass, labelClass } from '../Utils/formValidation';
-import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY, STUDIO_EMAIL } from '../Utils/emailjsConfig';
+import { sanitizeByField, validateField, inputClass, labelClass } from '../lib/formValidation';
+import { STUDIO_EMAIL } from '../lib/contactConfig';
 
-// TODO: replace with the real business WhatsApp number.
-const WHATSAPP_LINK = 'https://wa.me/919876543210';
+const WHATSAPP_LINK = 'https://wa.me/919133002002';
 
-// NOTE: phone and studio address below are placeholder values — replace
-// with the real business details before shipping.
+// NOTE: studio address below is a placeholder value — replace with the
+// real business details before shipping.
 const CONTACT_METHODS_SOURCE = {
-  phone: '+91 63008 62291',
+  phone: '+91 91330 02002',
   email: STUDIO_EMAIL,
   address: 'Tandur, TS',
 };
@@ -130,27 +129,20 @@ function Contact({ onSubmit, standalone = false }) {
     setIsSending(true);
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          to_email: CONTACT_METHODS_SOURCE.email,
-          from_name: values.name,
-          // Sent under both names since we don't control the exact variable
-          // name already typed into the EmailJS template — {{email}} and
-          // {{from_email}} both resolve to the same value, so whichever one
-          // the template actually references will populate correctly.
+      const res = await fetch('/api/contact/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: values.name,
           email: values.email,
-          from_email: values.email,
-          reply_to: values.email,
           phone: values.phone,
-          event_date: values.eventDate,
+          eventDate: values.eventDate,
           location: values.location,
-          occasion_type: values.occasionType,
+          occasionType: values.occasionType,
           message: values.message,
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+        }),
+      });
+      if (!res.ok) throw new Error('submit failed');
       onSubmit?.(values);
       setSubmitted(true);
     } catch {
@@ -176,12 +168,21 @@ function Contact({ onSubmit, standalone = false }) {
             Let&apos;s talk
           </p>
 
-          <h2
-            id="contact-heading"
-            className="veduka-contact__heading mt-3 text-[22px] text-[#241C12] lg:text-[40px]"
-          >
-            Tell us about the day you&apos;re planning
-          </h2>
+          {standalone ? (
+            <h1
+              id="contact-heading"
+              className="veduka-contact__heading mt-3 text-[22px] text-[#241C12] lg:text-[40px]"
+            >
+              Tell us about the day you&apos;re planning
+            </h1>
+          ) : (
+            <h2
+              id="contact-heading"
+              className="veduka-contact__heading mt-3 text-[22px] text-[#241C12] lg:text-[40px]"
+            >
+              Tell us about the day you&apos;re planning
+            </h2>
+          )}
 
           <p className="mt-4 max-w-[440px] text-[13px] leading-[1.7] text-[#6B5A42] lg:text-sm">
             No call centers, no templates. A real message goes straight to our studio — most enquiries get a

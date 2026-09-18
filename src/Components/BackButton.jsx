@@ -1,4 +1,6 @@
-import { useNavigate } from 'react-router-dom';
+'use client';
+
+import { useRouter } from 'next/navigation';
 
 const ArrowLeftIcon = () => (
   <svg
@@ -21,13 +23,13 @@ const ArrowLeftIcon = () => (
 // opened directly (a fresh tab, a shared link), so there's no in-app history
 // to return to and we land on the homepage instead of a dead end.
 function BackButton({ fallback = '/', className = '' }) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleClick = () => {
     if (window.history.length > 1) {
-      navigate(-1);
+      router.back();
     } else {
-      navigate(fallback);
+      router.push(fallback);
     }
   };
 
