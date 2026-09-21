@@ -12,7 +12,7 @@ export const metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   icons: {
-    icon: '/favicon.svg',
+    icon: '/favicon.png',
   },
 };
 

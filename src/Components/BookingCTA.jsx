@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import templePhoto from '../Images/highlights/06_temple_maternity.png';
+import templePhoto from '../Images/highlights/06_temple_maternity.jpg';
 
 const WHATSAPP_LINK = 'https://wa.me/919133002002';
 

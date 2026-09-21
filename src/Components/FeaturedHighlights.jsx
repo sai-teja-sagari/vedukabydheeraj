@@ -3,16 +3,16 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Lightbox from './Lightbox';
-import justUsPhoto from '../Images/highlights/05_bw_watercolor_kick.png';
-import momentsPhoto from '../Images/highlights/04_falling_in_love.png';
-import foreverPhoto from '../Images/highlights/08_black_suit_couple.png';
-import togetherPhoto from '../Images/highlights/10_maternity_collage_momstobe.png';
-import collageBlockPhoto from '../Images/highlights/09_maternity_collage_palace.png';
-import blessedPhoto from '../Images/highlights/06_temple_maternity.png';
-import wanderlustPhoto from '../Images/highlights/07_horse_beach.png';
-import enchantedPhoto from '../Images/highlights/01_red_dress_beach.png';
-import smittenPhoto from '../Images/highlights/03_dance_dip.png';
-import beginningsPhoto from '../Images/highlights/02_pre_wedding_splash.png';
+import justUsPhoto from '../Images/highlights/05_bw_watercolor_kick.jpg';
+import momentsPhoto from '../Images/highlights/04_falling_in_love.jpg';
+import foreverPhoto from '../Images/highlights/08_black_suit_couple.jpg';
+import togetherPhoto from '../Images/highlights/10_maternity_collage_momstobe.jpg';
+import collageBlockPhoto from '../Images/highlights/09_maternity_collage_palace.jpg';
+import blessedPhoto from '../Images/highlights/06_temple_maternity.jpg';
+import wanderlustPhoto from '../Images/highlights/07_horse_beach.jpg';
+import enchantedPhoto from '../Images/highlights/01_red_dress_beach.jpg';
+import smittenPhoto from '../Images/highlights/03_dance_dip.jpg';
+import beginningsPhoto from '../Images/highlights/02_pre_wedding_splash.jpg';
  
 const WHATSAPP_LINK = 'https://wa.me/919133002002';
 

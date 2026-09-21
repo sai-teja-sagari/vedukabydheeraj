@@ -1,8 +1,8 @@
 import ServicePage from '../../../Components/ServicePage';
 import { buildMetadata } from '../../../lib/seoConfig';
-import weddingMomentsRiceToss from '../../../Images/highlights/35_wedding_moments_rice_toss.png';
-import ringMomentCloseup from '../../../Images/highlights/39_ring_moment_closeup.png';
-import blackSuitCouple from '../../../Images/highlights/08_black_suit_couple.png';
+import weddingMomentsRiceToss from '../../../Images/highlights/35_wedding_moments_rice_toss.jpg';
+import ringMomentCloseup from '../../../Images/highlights/39_ring_moment_closeup.jpg';
+import blackSuitCouple from '../../../Images/highlights/08_black_suit_couple.jpg';
 import veilCheekKiss from '../../../Images/highlights/13_veil_cheek_kiss.jpg';
 
 export const metadata = buildMetadata({

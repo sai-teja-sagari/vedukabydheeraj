@@ -1,9 +1,9 @@
 import ServicePage from '../../../Components/ServicePage';
 import { buildMetadata } from '../../../lib/seoConfig';
-import redDressBeach from '../../../Images/highlights/01_red_dress_beach.png';
-import horseBeach from '../../../Images/highlights/07_horse_beach.png';
-import preweddingBikeForest from '../../../Images/highlights/19_prewedding_bike_forest.png';
-import preweddingSareeTwirl from '../../../Images/highlights/33_prewedding_saree_twirl.png';
+import redDressBeach from '../../../Images/highlights/01_red_dress_beach.jpg';
+import horseBeach from '../../../Images/highlights/07_horse_beach.jpg';
+import preweddingBikeForest from '../../../Images/highlights/19_prewedding_bike_forest.jpg';
+import preweddingSareeTwirl from '../../../Images/highlights/33_prewedding_saree_twirl.jpg';
 
 export const metadata = buildMetadata({
   title: 'Pre-Wedding Photography & Photoshoot',

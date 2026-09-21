@@ -1,10 +1,10 @@
 import ServicePage from '../../../Components/ServicePage';
 import { buildMetadata } from '../../../lib/seoConfig';
-import weddingRiceShowerBride from '../../../Images/highlights/34_wedding_rice_shower_bride.png';
-import engagementTempleSteps from '../../../Images/highlights/21_engagement_temple_steps.png';
-import mehndiBridePortrait from '../../../Images/highlights/37_mehndi_bride_portrait.png';
-import danceDip from '../../../Images/highlights/03_dance_dip.png';
-import receptionCheekKiss from '../../../Images/highlights/40_reception_cheek_kiss.png';
+import weddingRiceShowerBride from '../../../Images/highlights/34_wedding_rice_shower_bride.jpg';
+import engagementTempleSteps from '../../../Images/highlights/21_engagement_temple_steps.jpg';
+import mehndiBridePortrait from '../../../Images/highlights/37_mehndi_bride_portrait.jpg';
+import danceDip from '../../../Images/highlights/03_dance_dip.jpg';
+import receptionCheekKiss from '../../../Images/highlights/40_reception_cheek_kiss.jpg';
 
 export const metadata = buildMetadata({
   title: 'Wedding Photography & Videography',

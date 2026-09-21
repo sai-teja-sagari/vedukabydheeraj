@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import heroPhoto from '../Images/Front-page.jpg';
-import accentPhoto from '../Images/image.png';
+import accentPhoto from '../Images/image.jpg';
 
 // NOTE: the floating badge's "500+" figure below is still a placeholder —
 // update it to reflect real numbers before launch.

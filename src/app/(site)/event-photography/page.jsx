@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import ServicePage from '../../../Components/ServicePage';
 import { buildMetadata } from '../../../lib/seoConfig';
-import danceDip from '../../../Images/highlights/03_dance_dip.png';
-import engagementCafeHearts from '../../../Images/highlights/20_engagement_cafe_hearts.png';
+import danceDip from '../../../Images/highlights/03_dance_dip.jpg';
+import engagementCafeHearts from '../../../Images/highlights/20_engagement_cafe_hearts.jpg';
 
 export const metadata = buildMetadata({
   title: 'Event Photography Services',
