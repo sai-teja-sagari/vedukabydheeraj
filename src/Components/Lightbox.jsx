@@ -2,27 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const SWIPE_THRESHOLD_PX = 50;
-
-const CloseIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-    <line x1="5" y1="5" x2="19" y2="19" />
-    <line x1="19" y1="5" x2="5" y2="19" />
-  </svg>
-);
-
-const ChevronLeftIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M15 6l-6 6 6 6" />
-  </svg>
-);
-
-const ChevronRightIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M9 6l6 6-6 6" />
-  </svg>
-);
 
 const controlButtonClass =
   'flex items-center justify-center rounded-full border text-white transition-colors duration-150 ' +
@@ -160,7 +142,7 @@ function Lightbox({ photos, startIndex, onClose }) {
           onClick={onClose}
           className={`${controlButtonClass} absolute -top-12 right-0 h-9 w-9 lg:-top-14 lg:h-11 lg:w-11`}
         >
-          <CloseIcon />
+          <X size={16} />
         </button>
 
         <div
@@ -175,7 +157,7 @@ function Lightbox({ photos, startIndex, onClose }) {
               onClick={goPrev}
               className={`${controlButtonClass} absolute left-1 z-10 h-9 w-9 lg:left-3 lg:h-12 lg:w-12`}
             >
-              <ChevronLeftIcon />
+              <ChevronLeft size={20} />
             </button>
           )}
 
@@ -193,7 +175,7 @@ function Lightbox({ photos, startIndex, onClose }) {
               onClick={goNext}
               className={`${controlButtonClass} absolute right-1 z-10 h-9 w-9 lg:right-3 lg:h-12 lg:w-12`}
             >
-              <ChevronRightIcon />
+              <ChevronRight size={20} />
             </button>
           )}
         </div>

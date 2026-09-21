@@ -1,22 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import BackButton from './BackButton';
 
-const ArrowIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M5 12h14M13 6l6 6-6 6" />
-  </svg>
-);
-
-const ChevronIcon = ({ className }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M6 9l6 6 6-6" />
-  </svg>
-);
-
-const ChatBubbleIcon = () => (
-  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 3C6.9 3 3 6.6 3 11c0 2.1 1 4 2.6 5.4L5 21l4.4-1.4c.8.2 1.7.4 2.6.4 5.1 0 9-3.6 9-8s-3.9-9-9-9Z" />
+// Brand icon lucide doesn't carry — kept as a custom SVG so the WhatsApp CTA
+// stays visually consistent with every other WhatsApp button on the site.
+const WhatsAppIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.68 14.24c-.24.68-1.4 1.32-1.92 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.83-4.2-4.98-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.11.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.75 1.24 1.61 2 1.11 1 2.05 1.3 2.34 1.45.29.14.46.12.63-.05.18-.18.75-.87.95-1.17.2-.29.4-.24.66-.15.27.1 1.7.8 2 .95.29.14.48.21.55.33.07.14.07.72-.17 1.4Z" />
   </svg>
 );
 
@@ -66,7 +57,7 @@ function ServicePage({
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0F2A1E] px-8 py-3.5 text-sm font-semibold text-[#FBF6EC] hover:opacity-90"
           >
             Get an Instant Estimate
-            <ArrowIcon />
+            <ArrowRight size={16} />
           </Link>
           <Link
             href="/contact"
@@ -151,7 +142,7 @@ function ServicePage({
                       </span>
                       <h3 className="text-sm font-semibold text-[#241C12] lg:text-base">{q}</h3>
                     </span>
-                    <ChevronIcon className="mt-1 h-4 w-4 shrink-0 text-[#241C12] transition-transform duration-200 group-open:rotate-180" />
+                    <ChevronDown className="mt-1 h-4 w-4 shrink-0 text-[#241C12] transition-transform duration-200 group-open:rotate-180" />
                   </summary>
                   <p className="mt-3 pl-[26px] text-[13px] leading-[1.7] text-[#6B5A42]">{a}</p>
                 </details>
@@ -170,7 +161,7 @@ function ServicePage({
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#C9A227] px-6 py-3 text-sm font-semibold text-[#241C12] hover:bg-[#DCC98F]"
               >
-                <ChatBubbleIcon />
+                <WhatsAppIcon className="h-4 w-4" />
                 Ask on WhatsApp
               </a>
             </div>
@@ -210,7 +201,7 @@ function ServicePage({
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0F2A1E] px-8 py-3.5 text-sm font-semibold text-[#FBF6EC] hover:opacity-90"
             >
               Get an Instant Estimate
-              <ArrowIcon />
+              <ArrowRight size={16} />
             </Link>
             <Link
               href="/contact"

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { X } from 'lucide-react';
 
 // How far down the page (as a fraction of total scroll height) the visitor
 // must reach before the popup fires. 0.58 (~58%) is a starting guess — tune
@@ -11,13 +12,6 @@ const SCROLL_TRIGGER_RATIO = 0.58;
 
 const WHATSAPP_LINK =
   "https://wa.me/919133002002?text=Hi!%20I'd%20love%20to%20know%20more%20about%20your%20photography%20packages";
-
-const CloseIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-    <line x1="5" y1="5" x2="19" y2="19" />
-    <line x1="19" y1="5" x2="5" y2="19" />
-  </svg>
-);
 
 const CameraSparkleIcon = ({ className }) => (
   <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
@@ -151,7 +145,7 @@ function StoryPopup() {
           onClick={closePopup}
           className="absolute right-4 top-4 flex h-7 w-7 items-center justify-center rounded-full bg-[#F1E7D2] text-[#8A6A1F] md:right-[22px] md:top-[22px] md:h-[34px] md:w-[34px]"
         >
-          <CloseIcon />
+          <X size={14} />
         </button>
 
         <CameraSparkleIcon className="mx-auto mb-4 h-12 w-12 md:mb-[22px] md:h-16 md:w-16" />

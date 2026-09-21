@@ -1,40 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Camera, Heart, Star, ArrowRight } from 'lucide-react';
 import heroPhoto from '../Images/Front-page.jpg';
 import accentPhoto from '../Images/image.jpg';
 
 // NOTE: the floating badge's "500+" figure below is still a placeholder —
 // update it to reflect real numbers before launch.
 
-const CameraIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className} aria-hidden="true">
-    <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z" />
-    <circle cx="12" cy="13.5" r="3.2" />
-  </svg>
-);
-
-const HeartIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className} aria-hidden="true">
-    <path d="M12 20s-7.5-4.6-9.8-9A5 5 0 0 1 12 6a5 5 0 0 1 9.8 5c-2.3 4.4-9.8 9-9.8 9Z" />
-  </svg>
-);
-
-const StarIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className} aria-hidden="true">
-    <path d="m12 3 2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6L12 3Z" />
-  </svg>
-);
-
-const ArrowIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-    <path d="M5 12h14M13 6l6 6-6 6" />
-  </svg>
-);
-
 const STATS = [
-  { icon: CameraIcon, number: '500+', label: 'Celebrations captured' },
-  { icon: HeartIcon, number: '10+', label: 'Years behind the lens' },
-  { icon: StarIcon, number: '100%', label: 'Happy celebrations' },
+  { icon: Camera, number: '500+', label: 'Celebrations captured' },
+  { icon: Heart, number: '10+', label: 'Years behind the lens' },
+  { icon: Star, number: '100%', label: 'Happy celebrations' },
 ];
 
 function Hero() {
@@ -74,7 +50,7 @@ function Hero() {
               className="veduka-hero__cta inline-flex items-center justify-center gap-2 rounded-full bg-[#0F2A1E] px-[30px] py-4 text-sm font-medium text-[#FBF6EC] hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F2A1E] focus-visible:ring-offset-2"
             >
               Select your package
-              <ArrowIcon />
+              <ArrowRight size={16} />
             </Link>
             <Link
               href="/portfolio"

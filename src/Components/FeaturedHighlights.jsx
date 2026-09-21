@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { Camera, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
 import Lightbox from './Lightbox';
 import justUsPhoto from '../Images/highlights/05_bw_watercolor_kick.jpg';
 import momentsPhoto from '../Images/highlights/04_falling_in_love.jpg';
@@ -131,31 +132,6 @@ const LIGHTBOX_PHOTOS = CARDS.filter((card) => card.image).map((card) => ({
   couple: 'Sirish & Tejaswini',
 }));
 
-const CameraIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-    <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z" />
-    <circle cx="12" cy="13.5" r="3.2" />
-  </svg>
-);
-
-const ChevronLeftIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M15 6l-6 6 6 6" />
-  </svg>
-);
-
-const ChevronRightIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M9 6l6 6-6 6" />
-  </svg>
-);
-
-const ChevronUpIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M6 15l6-6 6 6" />
-  </svg>
-);
-
 const WhatsAppIcon = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} fill="#FFFFFF" aria-hidden="true">
     <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.68 14.24c-.24.68-1.4 1.32-1.92 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.83-4.2-4.98-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.11.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.75 1.24 1.61 2 1.11 1 2.05 1.3 2.34 1.45.29.14.46.12.63-.05.18-.18.75-.87.95-1.17.2-.29.4-.24.66-.15.27.1 1.7.8 2 .95.29.14.48.21.55.33.07.14.07.72-.17 1.4Z" />
@@ -267,7 +243,7 @@ function FeaturedHighlights() {
                     isEdge ? 'opacity-[0.55] grayscale-[40%]' : ''
                   }`}
                 >
-                  <CameraIcon className="h-9 w-9 text-white/60 md:h-11 md:w-11" />
+                  <Camera className="h-9 w-9 text-white/60 md:h-11 md:w-11" />
                 </div>
               )}
 
@@ -291,7 +267,7 @@ function FeaturedHighlights() {
           disabled={!canScrollPrev}
           className="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#241C12] shadow-lg disabled:opacity-40 md:left-3 md:h-12 md:w-12"
         >
-          <ChevronLeftIcon />
+          <ChevronLeft size={18} />
         </button>
         <button
           type="button"
@@ -300,7 +276,7 @@ function FeaturedHighlights() {
           disabled={!canScrollNext}
           className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#241C12] shadow-lg disabled:opacity-40 md:right-3 md:h-12 md:w-12"
         >
-          <ChevronRightIcon />
+          <ChevronRight size={18} />
         </button>
       </div>
 
@@ -321,7 +297,7 @@ function FeaturedHighlights() {
           onClick={scrollToTop}
           className="veduka-highlights__fab flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#241C12] shadow-lg md:h-[46px] md:w-[46px]"
         >
-          <ChevronUpIcon />
+          <ChevronUp size={18} />
         </button>
       </div>
 

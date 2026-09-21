@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { X } from 'lucide-react';
 import logo from '../Images/veduka_by_dheeraj_ultraHD_transparent.png';
 
 // "Portfolio" and "Contact" are real separate routes; the rest are anchors
@@ -192,18 +193,7 @@ function Navbar() {
               onClick={closeMenu}
               className="text-[#4A3B2A]"
             >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              >
-                <line x1="4" y1="4" x2="20" y2="20" />
-                <line x1="20" y1="4" x2="4" y2="20" />
-              </svg>
+              <X size={22} />
             </button>
           </div>
 

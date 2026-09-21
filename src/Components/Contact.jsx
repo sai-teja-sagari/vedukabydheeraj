@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Phone, Mail, MapPin, Navigation, ArrowRight } from 'lucide-react';
 import BookingCTA from './BookingCTA';
 import BackButton from './BackButton';
 import { sanitizeByField, validateField, inputClass, labelClass } from '../lib/formValidation';
@@ -24,37 +25,15 @@ const HOURS = [
 
 const OCCASIONS = ['Wedding', 'Engagement', 'Maternity', 'Birthday', 'Other'];
 
-const PhoneIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M7.5 4.5c.6 0 1.1.4 1.3 1l1 2.6c.2.5 0 1.1-.4 1.5l-1.1 1a11 11 0 0 0 5.1 5.1l1-1.1c.4-.4 1-.6 1.5-.4l2.6 1c.6.2 1 .7 1 1.3v2.1c0 .9-.8 1.6-1.7 1.4-8-1.4-13.9-7.3-15.3-15.3C2.3 5.3 3 4.5 3.9 4.5h3.6Z" />
-  </svg>
-);
+const PhoneIcon = () => <Phone className="h-6 w-6" strokeWidth={1.6} aria-hidden="true" />;
 
-const EnvelopeIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="3" y="5" width="18" height="14" rx="2" />
-    <path d="m4 6.5 8 6 8-6" />
-  </svg>
-);
+const EnvelopeIcon = () => <Mail className="h-6 w-6" strokeWidth={1.6} aria-hidden="true" />;
 
-const PinIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
-    <circle cx="12" cy="9.5" r="2.5" />
-  </svg>
-);
+const PinIcon = () => <MapPin className="h-6 w-6" strokeWidth={1.6} aria-hidden="true" />;
 
-const DirectionsIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M7 17 17 7M9 7h8v8" />
-  </svg>
-);
+const DirectionsIcon = () => <Navigation size={16} strokeWidth={1.8} aria-hidden="true" />;
 
-const ArrowIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M5 12h14M13 6l6 6-6 6" />
-  </svg>
-);
+const ArrowIcon = () => <ArrowRight size={16} aria-hidden="true" />;
 
 const WhatsAppIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">

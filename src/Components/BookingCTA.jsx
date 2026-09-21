@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Check, CalendarDays, ShieldCheck, ArrowRight } from 'lucide-react';
 import templePhoto from '../Images/highlights/06_temple_maternity.jpg';
 
 const WHATSAPP_LINK = 'https://wa.me/919133002002';
@@ -16,41 +17,6 @@ const STATS = [
 ];
 
 const WHAT_YOU_GET = ['Custom package summary', 'Luxury booking guidance', 'Fast availability check'];
-
-const CheckIcon = ({ className }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden="true"
-  >
-    <path d="M5 12.5 9.5 17 19 7" />
-  </svg>
-);
-
-const CalendarIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-    <rect x="3.5" y="5" width="17" height="15" rx="2" />
-    <path d="M3.5 9.5h17M8 3v3.5M16 3v3.5" />
-  </svg>
-);
-
-const ShieldIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-    <path d="M12 3.5 19 6.5v5.2c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6.5L12 3.5Z" />
-    <path d="m9 12 2.2 2.2L15.5 10" />
-  </svg>
-);
-
-const ArrowIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-    <path d="M5 12h14M13 6l6 6-6 6" />
-  </svg>
-);
 
 const WhatsAppIcon = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} fill="#FFFFFF" aria-hidden="true">
@@ -90,7 +56,7 @@ function BookingCTA() {
                   key={label}
                   className="inline-flex w-full items-center gap-2 rounded-full border border-[#DCC98F] bg-[#FBF6EC] px-4 py-2.5 text-[13px] font-medium text-[#4A3B2A] lg:w-auto"
                 >
-                  <CheckIcon className="h-4 w-4 shrink-0 text-[#2E9464]" />
+                  <Check className="h-4 w-4 shrink-0 text-[#2E9464]" />
                   {label}
                 </span>
               ))}
@@ -128,7 +94,7 @@ function BookingCTA() {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0F2A1E] px-8 py-4 text-sm font-semibold text-[#FBF6EC] hover:opacity-90 lg:w-auto"
               >
                 Configure Proposal
-                <ArrowIcon className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" />
               </Link>
 
               <a
@@ -154,7 +120,7 @@ function BookingCTA() {
                 <ul className="mt-4 flex flex-col gap-3">
                   {WHAT_YOU_GET.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-[#241C12]">
-                      <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#2E9464]" />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#2E9464]" />
                       {item}
                     </li>
                   ))}
@@ -190,7 +156,7 @@ function BookingCTA() {
 
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[#C9A227] px-3.5 py-1.5 text-[10.5px] font-bold uppercase tracking-[0.1em] text-[#241C12]">
-                  <CalendarIcon className="h-3.5 w-3.5" />
+                  <CalendarDays className="h-3.5 w-3.5" />
                   Date Planning
                 </span>
 
@@ -203,7 +169,7 @@ function BookingCTA() {
                 </p>
 
                 <p className="mt-3 flex items-center gap-1.5 text-xs font-medium text-[#7FC29B]">
-                  <ShieldIcon className="h-4 w-4" />
+                  <ShieldCheck className="h-4 w-4" />
                   Protected Original Work
                 </p>
               </div>

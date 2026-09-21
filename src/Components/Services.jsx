@@ -1,86 +1,21 @@
 import Link from 'next/link';
+import { Camera, Landmark, Cake, Video, LayoutGrid } from 'lucide-react';
 
-const iconProps = {
-  viewBox: '0 0 32 32',
-  fill: 'none',
-  stroke: 'currentColor',
-  strokeWidth: 1.3,
-  strokeLinecap: 'round',
-  strokeLinejoin: 'round',
-  'aria-hidden': 'true',
-  className: 'h-6 w-6 lg:h-8 lg:w-8',
-};
-
-export const EngagementIcon = () => (
-  <svg {...iconProps}>
+// These two are wedding-specific glyphs lucide doesn't have an equivalent
+// for (linked rings, a heart cradling a bump) — kept as custom SVGs while
+// the rest of the set below comes from lucide-react.
+const EngagementIcon = ({ className }) => (
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
     <circle cx="12.5" cy="19" r="7" />
     <circle cx="19.5" cy="19" r="7" />
     <path d="M16 4v4M13.8 6.3h4.4M14.4 4.9l3.2 3" />
   </svg>
 );
 
-export const CameraIcon = () => (
-  <svg {...iconProps}>
-    <path d="M13 11V9.3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V11" />
-    <rect x="4" y="11" width="24" height="15.5" rx="3" />
-    <circle cx="16" cy="18.8" r="5" />
-  </svg>
-);
-
-// NOTE: this "arch/mandap" glyph is the least conventional of the five icons and
-// may not read clearly at 24-32px — consider swapping for something more
-// universally recognizable (e.g. two rings with a small flame, or a floral
-// wreath) if it tests poorly with real users.
-export const WeddingIcon = () => (
-  <svg {...iconProps}>
-    <path d="M9 27V17a7 7 0 0 1 14 0v10" />
-    <line x1="6" y1="27" x2="26" y2="27" />
-    <circle cx="16" cy="7.5" r="1.4" fill="currentColor" stroke="none" />
-  </svg>
-);
-
-export const MaternityIcon = () => (
-  <svg {...iconProps}>
+const MaternityIcon = ({ className }) => (
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
     <path d="M16 26.5s-8.5-5.4-8.5-11.7A5.3 5.3 0 0 1 16 11.4a5.3 5.3 0 0 1 8.5 3.4c0 6.3-8.5 11.7-8.5 11.7Z" />
     <path d="M16 11c.2-1.8 1-2.8 2.2-3.3M16 11c-.2-1.8-1-2.8-2.2-3.3" />
-  </svg>
-);
-
-const chipIconProps = {
-  viewBox: '0 0 24 24',
-  fill: 'none',
-  stroke: 'currentColor',
-  strokeWidth: 1.6,
-  strokeLinecap: 'round',
-  strokeLinejoin: 'round',
-  'aria-hidden': 'true',
-  className: 'h-4 w-4',
-};
-
-const VideoCameraIcon = () => (
-  <svg {...chipIconProps}>
-    <rect x="3" y="6.5" width="12" height="11" rx="2" />
-    <path d="M15 10.2 21 7v10l-6-3.2Z" />
-  </svg>
-);
-
-const GridIcon = () => (
-  <svg {...chipIconProps}>
-    <rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.4" />
-    <rect x="14" y="3.5" width="6.5" height="6.5" rx="1.4" />
-    <rect x="3.5" y="14" width="6.5" height="6.5" rx="1.4" />
-    <rect x="14" y="14" width="6.5" height="6.5" rx="1.4" />
-  </svg>
-);
-
-export const CakeIcon = () => (
-  <svg {...iconProps}>
-    <path d="M7 27v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7" />
-    <path d="M7 27h18" />
-    <path d="M12 18v-4M16 18v-4M20 18v-4" />
-    <path d="M12 12.2c0-.9.6-1.4 0-2.2-.6.8 0 1.3 0 2.2Z" />
-    <path d="M16 12.2c0-.9.6-1.4 0-2.2-.6.8 0 1.3 0 2.2Z" />
-    <path d="M20 12.2c0-.9.6-1.4 0-2.2-.6.8 0 1.3 0 2.2Z" />
   </svg>
 );
 
@@ -92,13 +27,13 @@ const SERVICES = [
     href: '/wedding-photography',
   },
   {
-    Icon: CameraIcon,
+    Icon: Camera,
     title: 'Pre & Post Wedding',
     description: 'Dreamy sessions before and after the big celebration.',
     href: '/pre-wedding-photography',
   },
   {
-    Icon: WeddingIcon,
+    Icon: Landmark,
     title: 'Wedding',
     description: 'Every ritual, every tear, every laugh — captured in full.',
     href: '/wedding-photography',
@@ -110,7 +45,7 @@ const SERVICES = [
     href: '/portfolio?category=maternity',
   },
   {
-    Icon: CakeIcon,
+    Icon: Cake,
     title: 'Birthday & Born Baby Shoots',
     description: 'Milestones and tiny toes, celebrated in style.',
     href: '/birthday-photography',
@@ -156,7 +91,7 @@ function Services() {
             className="flex items-center gap-4 rounded-md border border-[#E9DCBB] bg-[#F5EDDC] p-5 text-left transition-colors duration-150 hover:border-[#C9A227] lg:flex-col lg:gap-0 lg:px-5 lg:py-9 lg:text-center"
           >
             <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#EDE1C4] text-[#9C7620] lg:mb-[22px] lg:h-[74px] lg:w-[74px]">
-              <Icon />
+              <Icon className="h-6 w-6 lg:h-8 lg:w-8" strokeWidth={1.3} />
             </span>
             <div>
               <h3 className="text-sm font-semibold text-[#241C12] lg:mb-2.5 lg:text-base">{title}</h3>
@@ -174,7 +109,7 @@ function Services() {
           className="flex w-full items-center gap-3 rounded-full border border-[#E9DCBB] bg-[#F5EDDC] py-2 pl-2 pr-6 transition-colors duration-150 hover:border-[#C9A227] lg:w-auto"
         >
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0F2A1E] text-[#C9A227]">
-            <VideoCameraIcon />
+            <Video className="h-4 w-4" />
           </span>
           <span className="text-sm font-semibold text-[#241C12]">Wedding Cinematography</span>
         </Link>
@@ -183,7 +118,7 @@ function Services() {
           className="flex w-full items-center gap-3 rounded-full border border-[#E9DCBB] bg-[#F5EDDC] py-2 pl-2 pr-6 transition-colors duration-150 hover:border-[#C9A227] lg:w-auto"
         >
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0F2A1E] text-[#C9A227]">
-            <GridIcon />
+            <LayoutGrid className="h-4 w-4" />
           </span>
           <span className="text-sm font-semibold text-[#241C12]">View All Services</span>
         </Link>
