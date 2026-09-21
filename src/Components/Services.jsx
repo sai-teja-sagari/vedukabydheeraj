@@ -46,6 +46,33 @@ export const MaternityIcon = () => (
   </svg>
 );
 
+const chipIconProps = {
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 1.6,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+  'aria-hidden': 'true',
+  className: 'h-4 w-4',
+};
+
+const VideoCameraIcon = () => (
+  <svg {...chipIconProps}>
+    <rect x="3" y="6.5" width="12" height="11" rx="2" />
+    <path d="M15 10.2 21 7v10l-6-3.2Z" />
+  </svg>
+);
+
+const GridIcon = () => (
+  <svg {...chipIconProps}>
+    <rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.4" />
+    <rect x="14" y="3.5" width="6.5" height="6.5" rx="1.4" />
+    <rect x="3.5" y="14" width="6.5" height="6.5" rx="1.4" />
+    <rect x="14" y="14" width="6.5" height="6.5" rx="1.4" />
+  </svg>
+);
+
 export const CakeIcon = () => (
   <svg {...iconProps}>
     <path d="M7 27v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7" />
@@ -141,13 +168,24 @@ function Services() {
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center gap-5 text-[12px] font-medium uppercase tracking-[0.1em] text-[#8A6A1F] lg:mt-10">
-        <Link href="/wedding-cinematography" className="hover:underline">
-          Wedding Cinematography
+      <div className="mt-8 flex flex-col items-center gap-3 lg:mt-10 lg:flex-row lg:justify-center lg:gap-4">
+        <Link
+          href="/wedding-cinematography"
+          className="flex w-full items-center gap-3 rounded-full border border-[#E9DCBB] bg-[#F5EDDC] py-2 pl-2 pr-6 transition-colors duration-150 hover:border-[#C9A227] lg:w-auto"
+        >
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0F2A1E] text-[#C9A227]">
+            <VideoCameraIcon />
+          </span>
+          <span className="text-sm font-semibold text-[#241C12]">Wedding Cinematography</span>
         </Link>
-        <span className="text-[#DCC98F]">·</span>
-        <Link href="/event-photography" className="hover:underline">
-          View All Services
+        <Link
+          href="/event-photography"
+          className="flex w-full items-center gap-3 rounded-full border border-[#E9DCBB] bg-[#F5EDDC] py-2 pl-2 pr-6 transition-colors duration-150 hover:border-[#C9A227] lg:w-auto"
+        >
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0F2A1E] text-[#C9A227]">
+            <GridIcon />
+          </span>
+          <span className="text-sm font-semibold text-[#241C12]">View All Services</span>
         </Link>
       </div>
     </section>
