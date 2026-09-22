@@ -1,6 +1,6 @@
 import ServicePage from '../../../Components/ServicePage';
 import { buildMetadata } from '../../../lib/seoConfig';
-import weddingRiceShowerBride from '../../../Images/highlights/34_wedding_rice_shower_bride.jpg';
+import bridalPortraitMakeupCollage from '../../../Images/highlights/bridal_portrait_makeup_collage.jpg';
 import engagementTempleSteps from '../../../Images/highlights/21_engagement_temple_steps.jpg';
 import mehndiBridePortrait from '../../../Images/highlights/37_mehndi_bride_portrait.jpg';
 import danceDip from '../../../Images/highlights/03_dance_dip.jpg';
@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
   description:
     'Traditional and candid wedding photography across Engagement, Haldi, Sangeeth, the wedding day, and Reception. Real coverage, real ceremonies, transparent packages.',
   path: '/wedding-photography',
-  image: weddingRiceShowerBride.src,
+  image: bridalPortraitMakeupCollage.src,
 });
 
 const SECTIONS = [
@@ -86,9 +86,8 @@ export default function WeddingPhotographyPage() {
       eyebrow="Wedding Photography"
       h1="Wedding Photography & Videography by Veduka by Dheeraj"
       intro="Traditional and candid wedding photography and videography across every ceremony — Engagement, Haldi, Sangeeth, the wedding day, and Reception — with coverage you can build around the functions you’re actually hosting."
-      heroImage={weddingRiceShowerBride}
-      heroAlt="Bride having rice grains showered over her head during a traditional wedding blessing"
-      heroFocalPoint="center 25%"
+      heroImage={bridalPortraitMakeupCollage}
+      heroAlt="Bridal portrait collage: a smiling bride in a red and white saree, the couple's hands during a ritual, bridal makeup and cosmetics, and the bride posing outdoors under foliage"
       sections={SECTIONS}
       faqs={FAQS}
       relatedServices={RELATED}
