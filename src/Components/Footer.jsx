@@ -61,6 +61,12 @@ const SOCIAL_LINKS = [
   },
 ];
 
+// If portfolioUrl is empty, the credit renders as plain text instead of a link.
+const DEVELOPER = {
+  name: 'Sai Teja Sagari',
+  portfolioUrl: 'https://www.linkedin.com/in/sai-teja-sagari/',
+};
+
 const CONTACT_ITEMS = [
   { icon: <MapPin size={18} strokeWidth={1.6} />, label: 'Studio address', value: CONTACT.address },
   { icon: <Phone size={18} strokeWidth={1.6} />, label: 'Call / WhatsApp', value: [CONTACT.phone], href: CONTACT.phoneHref },
@@ -153,9 +159,21 @@ function Footer() {
         {/* ===== BOTTOM BAR ===== */}
         <div className="mt-14 border-t border-[#DCC98F] pt-6 md:mt-16">
           <div className="flex flex-col items-center gap-3 text-center md:flex-row md:items-center md:justify-between md:gap-0 md:text-left">
-            <p className="text-[13px] text-[#8A7A5E]">© 2026 Veduka by Dheeraj. All rights reserved.</p>
+            <p className="text-[13px] text-[#8A7A5E]">© 2026 Veduka by Dheeraj. All Rights Reserved.</p>
             <p className="text-[13px] text-[#8A7A5E]">
-              Crafted by <span className="font-medium text-[#9C7620]">Sai Teja Sagari</span>
+              Crafted by{' '}
+              {DEVELOPER.portfolioUrl ? (
+                <a
+                  href={DEVELOPER.portfolioUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="veduka-footer__link font-medium text-[#9C7620] hover:text-[#4A3B2A]"
+                >
+                  {DEVELOPER.name}
+                </a>
+              ) : (
+                <span className="font-medium text-[#9C7620]">{DEVELOPER.name}</span>
+              )}
             </p>
           </div>
         </div>
