@@ -134,41 +134,37 @@
   transform: scaleX(1);
 }
 
-/* Mobile full-screen overlay: fades + slides in/out instead of mount/unmount so exit transitions play */
-.veduka-navbar__overlay {
+/* Respect prefers-reduced-motion: strip transitions/animations everywhere in the navbar */
+@media (prefers-reduced-motion: reduce) {
+  .veduka-navbar * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ===== MobileHeader ===== */
+.veduka-mobile-header {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Full-screen overlay: fades + slides in/out instead of mount/unmount so exit transitions play */
+.veduka-mobile-header__overlay {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
   transition: opacity 280ms ease, transform 280ms ease, visibility 280ms ease;
 }
 
-.veduka-navbar__overlay--open {
+.veduka-mobile-header__overlay--open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-/* Hamburger -> X transform */
-.veduka-navbar__bar {
-  transition: transform 250ms ease, opacity 250ms ease;
-}
-
-.veduka-navbar__bar--top-open {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.veduka-navbar__bar--mid-open {
-  opacity: 0;
-}
-
-.veduka-navbar__bar--bottom-open {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* Respect prefers-reduced-motion: strip transitions/animations everywhere in the navbar */
+/* Respect prefers-reduced-motion: strip transitions/animations everywhere in the mobile header */
 @media (prefers-reduced-motion: reduce) {
-  .veduka-navbar *,
-  .veduka-navbar__overlay {
+  .veduka-mobile-header *,
+  .veduka-mobile-header__overlay {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
