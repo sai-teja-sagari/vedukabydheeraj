@@ -116,6 +116,18 @@
   }
 }
 
+/* ===== AboutPhotographer ===== */
+.veduka-about {
+  font-family: 'Poppins', sans-serif;
+}
+
+.veduka-about__heading,
+.veduka-about__lead,
+.veduka-about__quote,
+.veduka-about__stat-number {
+  font-family: 'Playfair Display', serif;
+}
+
 /* ===== Navbar ===== */
 .veduka-navbar {
   font-family: 'Poppins', sans-serif;

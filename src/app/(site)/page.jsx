@@ -1,4 +1,5 @@
 import Hero from '../../Components/Hero';
+import AboutPhotographer from '../../Components/AboutPhotographer';
 import Services from '../../Components/Services';
 import FeaturedHighlights from '../../Components/FeaturedHighlights';
 import Contact from '../../Components/Contact';
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <FeaturedHighlights />
       <Contact />
+      <AboutPhotographer />
     </>
   );
 }

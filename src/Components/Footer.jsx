@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import logo from '../Images/veduka_by_dheeraj_ultraHD_transparent.png';
 
-// "Portfolio" and "Contact" are real separate routes; the rest are anchors
-// on the homepage.
+// "Portfolio", "About Us", and "Contact" are real separate routes; "Services"
+// is an anchor on the homepage.
 const QUICK_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'Portfolio', to: '/portfolio' },
-  { label: 'About Us', to: '/#about' },
+  { label: 'About Us', to: '/about' },
   { label: 'Services', to: '/#services' },
   { label: 'Contact', to: '/contact' },
 ];
