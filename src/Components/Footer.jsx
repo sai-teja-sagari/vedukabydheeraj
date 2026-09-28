@@ -13,10 +13,8 @@ const QUICK_LINKS = [
   { label: 'Contact', to: '/contact' },
 ];
 
-// NOTE: studio address and email below are placeholder values — replace
-// with the real business details before shipping.
 const CONTACT = {
-  address: ['4-15, Celebration Street,', 'Jubilee Hills, Hyderabad 500033'],
+  address: ['Tandur, Telangana,', 'India'],
   phone: '+91 91330 02002',
   phoneHref: 'tel:+919133002002',
   whatsappHref: 'https://wa.me/919133002002',

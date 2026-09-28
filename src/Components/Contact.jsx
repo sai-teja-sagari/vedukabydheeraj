@@ -9,12 +9,11 @@ import { STUDIO_EMAIL } from '../lib/contactConfig';
 
 const WHATSAPP_LINK = 'https://wa.me/919133002002';
 
-// NOTE: studio address below is a placeholder value — replace with the
-// real business details before shipping.
 const CONTACT_METHODS_SOURCE = {
   phone: '+91 91330 02002',
   email: STUDIO_EMAIL,
-  address: 'Tandur, TS',
+  address: 'Chaitanya Park, 7H3Q+JMW, Venkateshwara Colony, Tandur, Telangana 501141',
+  mapsUrl: 'https://maps.google.com/?q=Chaitanya+Park+7H3Q%2BJMW+Venkateshwara+Colony+Tandur+Telangana+501141',
 };
 
 const HOURS = [
@@ -170,17 +169,32 @@ function Contact({ onSubmit, standalone = false }) {
 
           {/* Contact list */}
           <div className="mt-8 flex flex-col gap-5">
-            {CONTACT_METHODS.map(({ Icon, label, value }) => (
-              <div key={label} className="flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E9DCBB] bg-[#F5EDDC] text-[#9C7620]">
-                  <Icon />
-                </span>
-                <div>
-                  <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#7A6A4A]">{label}</p>
-                  <p className="mt-0.5 text-[15px] font-medium text-[#241C12]">{value}</p>
+            {CONTACT_METHODS.map(({ Icon, label, value }) => {
+              const isStudioLocation = label === 'Studio';
+
+              return (
+                <div key={label} className="flex items-center gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E9DCBB] bg-[#F5EDDC] text-[#9C7620]">
+                    <Icon />
+                  </span>
+                  <div>
+                    <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[#7A6A4A]">{label}</p>
+                    {isStudioLocation ? (
+                      <a
+                        href={CONTACT_METHODS_SOURCE.mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-0.5 inline-block text-[15px] font-medium text-[#241C12] underline-offset-4 hover:underline"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="mt-0.5 text-[15px] font-medium text-[#241C12]">{value}</p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Map card — placeholder scaffolding; replace with a real Google Maps
@@ -188,12 +202,18 @@ function Contact({ onSubmit, standalone = false }) {
               title attribute) or JS maps library without restructuring this card. */}
           <div className="relative mt-8 h-[170px] overflow-hidden rounded-xl border border-[#E9DCBB] bg-[#EDEAE3] lg:h-[230px]">
             <div className="absolute left-[14px] right-[14px] top-[14px] flex items-center justify-between gap-3 rounded-lg bg-white px-4 py-3 shadow-sm">
-              <div>
-                <p className="text-sm font-semibold text-[#241C12]">Veduka Studio</p>
-                <p className="text-xs text-[#7A6A4A]">{CONTACT_METHODS_SOURCE.address}</p>
-              </div>
               <a
-                href="https://maps.google.com"
+                href={CONTACT_METHODS_SOURCE.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Tandur, Telangana, India in Google Maps"
+                className="min-w-0 flex-1"
+              >
+                <p className="text-sm font-semibold text-[#241C12]">Veduka Studio</p>
+                <p className="text-xs text-[#7A6A4A] underline-offset-4 hover:underline">{CONTACT_METHODS_SOURCE.address}</p>
+              </a>
+              <a
+                href={CONTACT_METHODS_SOURCE.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get directions to Veduka Studio"
@@ -202,9 +222,14 @@ function Contact({ onSubmit, standalone = false }) {
                 <DirectionsIcon />
               </a>
             </div>
-            <span className="absolute bottom-3 left-3 text-[10px] text-[#7A6A4A]">
-              Map preview · replace with live Google Maps embed
-            </span>
+            <a
+              href={CONTACT_METHODS_SOURCE.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-3 left-3 text-[10px] text-[#7A6A4A] underline-offset-2 hover:underline"
+            >
+              Chaitanya Park, Tandur, Telangana 501141
+            </a>
           </div>
 
           {/* Hours card */}
