@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Navigation, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Navigation, ArrowRight, CalendarDays } from 'lucide-react';
 import BookingCTA from './BookingCTA';
 import BackButton from './BackButton';
 import { sanitizeByField, validateField, inputClass, labelClass } from '../lib/formValidation';
@@ -65,9 +65,9 @@ function Contact({ onSubmit, standalone = false }) {
   const [isSending, setIsSending] = useState(false);
   const [sendError, setSendError] = useState(false);
 
-  // Used both as the eventDate <input min> (blocks picking a past date in the
-  // calendar widget) and to validate it on blur/submit.
-  const todayIso = new Date().toISOString().slice(0, 10);
+  // Use the local calendar day for both the picker constraint and validation.
+  const today = new Date();
+  const todayIso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -371,19 +371,25 @@ function Contact({ onSubmit, standalone = false }) {
                     <label htmlFor="eventDate" className={labelClass}>
                       Event date <span className="text-red-600">*</span>
                     </label>
-                    <input
-                      id="eventDate"
-                      name="eventDate"
-                      type="date"
-                      required
-                      min={todayIso}
-                      value={values.eventDate}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={inputClass}
-                      aria-invalid={Boolean(errors.eventDate)}
-                      aria-describedby={errors.eventDate ? 'eventDate-error' : undefined}
-                    />
+                    <div className="relative mt-1.5 min-w-0 w-full">
+                      <input
+                        id="eventDate"
+                        name="eventDate"
+                        type="date"
+                        required
+                        min={todayIso}
+                        value={values.eventDate}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={`${inputClass} block box-border min-w-0 max-w-full pr-11`}
+                        aria-invalid={Boolean(errors.eventDate)}
+                        aria-describedby={errors.eventDate ? 'eventDate-error' : undefined}
+                      />
+                      <CalendarDays
+                        aria-hidden="true"
+                        className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9C7620]"
+                      />
+                    </div>
                     {errors.eventDate && (
                       <p id="eventDate-error" className="mt-1 text-xs text-red-600">
                         {errors.eventDate}
