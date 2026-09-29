@@ -6,9 +6,9 @@ import blackSuitCouple from '../../../Images/highlights/08_black_suit_couple.jpg
 import veilCheekKiss from '../../../Images/highlights/13_veil_cheek_kiss.jpg';
 
 export const metadata = buildMetadata({
-  title: 'Wedding Cinematography & Videography',
+  title: 'Wedding Cinematography in Tandur, Telangana',
   description:
-    'Cinematic wedding films and teaser videos alongside our photography coverage — capturing motion, sound, and moments a photo alone can’t.',
+    'Wedding cinematography and wedding films in Tandur, Telangana, capturing the emotion, movement, and rituals of your celebration in a cinematic story.',
   path: '/wedding-cinematography',
   image: blackSuitCouple.src,
 });

@@ -184,7 +184,6 @@ function Lightbox({ photos, startIndex, onClose }) {
           {photo.caption && (
             <p className="veduka-lightbox__caption text-[15px] italic text-white/90 lg:text-lg">{photo.caption}</p>
           )}
-          {photo.couple && <p className="mt-1 text-[12px] text-white/60 lg:text-sm">{photo.couple}</p>}
           {canNavigate && (
             <p className="mt-2 text-[11px] text-white/40 lg:text-xs">
               {index + 1} / {photos.length}

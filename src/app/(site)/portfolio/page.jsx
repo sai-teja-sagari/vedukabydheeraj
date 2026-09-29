@@ -3,9 +3,9 @@ import PortfolioPage from '../../../Components/PortfolioPage';
 import { buildMetadata } from '../../../lib/seoConfig';
 
 export const metadata = buildMetadata({
-  title: 'Wedding & Pre-Wedding Photography Portfolio',
+  title: 'Portfolio | Veduka by Dheeraj',
   description:
-    'Browse real wedding, pre-wedding, engagement, and maternity photography by Veduka by Dheeraj — candid moments and traditional ceremony coverage from real celebrations.',
+    'Browse real wedding, pre-wedding, engagement, and maternity photography by Veduka by Dheeraj in Tandur, Telangana.',
   path: '/portfolio',
 });
 

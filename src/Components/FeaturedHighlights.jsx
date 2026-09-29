@@ -40,7 +40,7 @@ const CARDS = [
     // couple sits just left of center here, so bias slightly right of that.
     focalPoint: '55% center',
     gradient: 'bg-[linear-gradient(160deg,#E8C9C2,#C99A8F)]',
-    alt: 'Sirish and Tejaswini laughing together in a playful pose, styled as a black-and-white watercolor keepsake',
+    alt: ' laughing together in a playful pose, styled as a black-and-white watercolor keepsake',
   },
   {
     word: 'moments',
@@ -66,7 +66,7 @@ const CARDS = [
     type: 'photo',
     image: foreverPhoto,
     gradient: 'bg-[linear-gradient(160deg,#D98B6B,#7C8B6F)]',
-    alt: 'Sirish and Tejaswini in elegant black formal wear, sharing a quiet moment beneath the palms',
+    alt: ' in elegant black formal wear, sharing a quiet moment beneath the palms',
   },
   {
     word: 'together',
@@ -111,14 +111,14 @@ const CARDS = [
     type: 'photo',
     image: smittenPhoto,
     gradient: 'bg-[linear-gradient(160deg,#C9C9C9,#6B6B6B)]',
-    alt: 'Sirish and Tejaswini sharing a dance dip in front of a flower wall',
+    alt: ' sharing a dance dip in front of a flower wall',
   },
   {
     word: 'beginnings',
     type: 'photo',
     image: beginningsPhoto,
     gradient: 'bg-[linear-gradient(160deg,#EDE0D6,#C9A89A)]',
-    alt: 'Pre-wedding cover photo of Sirish and Tejaswini embracing as a wave splashes behind them, with "Pre Wedding" title text',
+    alt: 'Pre-wedding cover photo of  embracing as a wave splashes behind them, with "Pre Wedding" title text',
   },
 ];
 
@@ -129,7 +129,7 @@ const LIGHTBOX_PHOTOS = CARDS.filter((card) => card.image).map((card) => ({
   src: card.image,
   alt: card.alt,
   caption: card.word,
-  couple: 'Sirish & Tejaswini',
+  couple: '',
 }));
 
 const WhatsAppIcon = ({ className }) => (

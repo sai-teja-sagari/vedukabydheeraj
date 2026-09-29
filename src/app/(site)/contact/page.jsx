@@ -2,9 +2,9 @@ import Contact from '../../../Components/Contact';
 import { buildMetadata } from '../../../lib/seoConfig';
 
 export const metadata = buildMetadata({
-  title: 'Contact Us',
+  title: 'Contact Veduka by Dheeraj',
   description:
-    'Get in touch with Veduka by Dheeraj to enquire about wedding photography, pre-wedding shoots, birthdays, or event coverage. We reply to most enquiries within a few hours.',
+    'Contact Veduka by Dheeraj in Tandur, Telangana to enquire about wedding photography, pre-wedding shoots, birthdays, maternity stories, or event coverage.',
   path: '/contact',
 });
 

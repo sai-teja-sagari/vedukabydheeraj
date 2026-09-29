@@ -2,9 +2,9 @@ import ServicePage from '../../../Components/ServicePage';
 import { buildMetadata } from '../../../lib/seoConfig';
 
 export const metadata = buildMetadata({
-  title: 'Birthday Photography & Event Coverage',
+  title: 'Birthday Photography in Tandur, Telangana',
   description:
-    'Birthday and milestone event photography with traditional and candid coverage, plus LED wall and live streaming add-ons for larger celebrations.',
+    'Birthday photography and milestone event coverage in Tandur, Telangana, with candid storytelling, traditional portraits, and celebration coverage for family moments.',
   path: '/birthday-photography',
 });
 

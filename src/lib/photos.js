@@ -76,7 +76,7 @@ export const photos = [
     alt: 'Groom in a turban dipping his bride mid-dance in front of a floral wall at the wedding reception',
     category: 'weddings',
     caption: 'we look cute together',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'black-suit-couple-01',
@@ -84,7 +84,7 @@ export const photos = [
     alt: 'Couple in elegant black formalwear sharing a quiet look beneath the palms at their reception',
     category: 'weddings',
     caption: 'forever, almost',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'red-dress-beach-01',
@@ -92,7 +92,7 @@ export const photos = [
     alt: "Bride and groom on the beach at dusk, her red gown trailing in the wind",
     category: 'pre-wedding',
     caption: 'the wind caught her dress',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'pre-wedding-splash-01',
@@ -100,7 +100,7 @@ export const photos = [
     alt: 'Groom lifting his bride as a wave breaks behind them on a rocky shore, styled as a "Pre Wedding" title card',
     category: 'pre-wedding',
     caption: 'caught by the wave',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'falling-in-love-01',
@@ -108,7 +108,7 @@ export const photos = [
     alt: 'Aerial view of the couple lying together on dark ocean rocks, styled as a "Falling in Love" poster',
     category: 'pre-wedding',
     caption: 'falling in love',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'horse-beach-01',
@@ -116,7 +116,7 @@ export const photos = [
     alt: 'Couple walking a horse along the shoreline on a sunlit beach',
     category: 'pre-wedding',
     caption: 'wanderlust',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'temple-maternity-01',
@@ -124,7 +124,7 @@ export const photos = [
     alt: 'Expecting couple standing before a heritage temple gopuram, she in a red silk saree',
     category: 'maternity',
     caption: 'blessed',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-collage-palace-01',
@@ -132,7 +132,7 @@ export const photos = [
     alt: 'Pregnancy announcement collage of the couple in front of a domed heritage building with the Indian flag',
     category: 'maternity',
     caption: 'the announcement',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-collage-momstobe-01',
@@ -140,7 +140,7 @@ export const photos = [
     alt: 'Maternity collage of the mom-to-be forming a heart over her baby bump, branded "Moms & to Be"',
     category: 'maternity',
     caption: 'moms to be',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'bw-watercolor-kick-01',
@@ -148,7 +148,7 @@ export const photos = [
     alt: 'Bride-to-be kicking up a heel mid-laugh while her partner holds her close, in a black-and-white watercolor keepsake',
     category: 'engagement',
     caption: 'just us',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'family-pull-album-01',
@@ -156,7 +156,7 @@ export const photos = [
     alt: 'Bride and groom pulled together by laughing family members in a tug-of-war wedding game, framed as a "Bride & Groom" album page',
     category: 'weddings',
     caption: 'pulled together',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'veil-cheek-kiss-01',
@@ -164,7 +164,7 @@ export const photos = [
     alt: "Bride in a lace veil kissing the groom's cheek as he smiles, surrounded by soft greenery",
     category: 'weddings',
     caption: 'sealed with a kiss',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'leaf-half-face-bridal-01',
@@ -172,15 +172,15 @@ export const photos = [
     alt: 'Bride in gold temple jewelry peeking out from behind a large leaf, half her face in a smiling close-up',
     category: 'weddings',
     caption: 'peekaboo',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'bridal-portrait-poster-01',
     src: bridalPortraitPoster,
-    alt: "Bride's close-up portrait framed by watercolor leaves on a wedding album page for Sirish & Tejaswini",
+    alt: "Bride's close-up portrait framed by watercolor leaves on a wedding album page for ",
     category: 'weddings',
     caption: 'the bride',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'marriage-ceremony-collage-01',
@@ -188,15 +188,15 @@ export const photos = [
     alt: "Marriage ceremony collage of the bride in a red-and-white silk saree, the groom's hands, and bridal makeup essentials",
     category: 'weddings',
     caption: 'getting ready',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'wedding-dip-title-01',
     src: weddingDipTitle,
-    alt: 'Groom dipping his bride under a canopy of trees, styled as a "Wedding, Sirish-Tejaswini, 17th Dec 2023" title card',
+    alt: 'Groom dipping his bride under a canopy of trees, styled as a "Wedding, , 17th Dec 2023" title card',
     category: 'weddings',
     caption: '17th of december',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'wedding-rice-shower-bride-01',
@@ -236,7 +236,7 @@ export const photos = [
     alt: 'Groom in a turban lifting his bride off her feet on a palm-lined garden path during their pre-wedding shoot',
     category: 'pre-wedding',
     caption: 'swept off her feet',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'prewedding-bike-forest-01',
@@ -244,7 +244,7 @@ export const photos = [
     alt: 'Couple riding a motorcycle through a misty forest, her blue ruffled gown catching the wind',
     category: 'pre-wedding',
     caption: 'a smile is the best makeup',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'prewedding-saree-twirl-01',
@@ -252,7 +252,7 @@ export const photos = [
     alt: 'Bride twirling the pallu of her cream and red silk saree, smiling beneath a canopy of palm trees',
     category: 'pre-wedding',
     caption: 'twirl and smile',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'temple-silhouette-maternity-01',
@@ -260,7 +260,7 @@ export const photos = [
     alt: 'Silhouette of an expecting mother cradling her bump in an archway at sunset, a heritage temple gopuram glowing behind her',
     category: 'maternity',
     caption: 'golden hour',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-orange-saree-pillars-01',
@@ -268,7 +268,7 @@ export const photos = [
     alt: 'Expecting mother in an orange silk saree cradling her bump beneath the pillars of a traditional heritage home',
     category: 'maternity',
     caption: 'waiting for you',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-lap-rest-01',
@@ -276,7 +276,7 @@ export const photos = [
     alt: "Expecting mother resting her husband's head against her bump as he looks up at her lovingly",
     category: 'maternity',
     caption: 'resting close',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-bw-silhouette-01',
@@ -284,7 +284,7 @@ export const photos = [
     alt: 'Black-and-white portrait of an expecting mother in a flowing gown with her silhouette cast on the wall beside her',
     category: 'maternity',
     caption: 'two shadows now',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-marigold-field-01',
@@ -292,7 +292,7 @@ export const photos = [
     alt: "Groom kneeling to kiss his wife's baby bump amid a marigold field at sunset, a temple gopuram in the distance",
     category: 'maternity',
     caption: 'blessed with love',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-floral-swing-ruins-01',
@@ -300,7 +300,7 @@ export const photos = [
     alt: 'Expecting couple beside a marigold-decked swing with a misty hillside temple backdrop',
     category: 'maternity',
     caption: 'swing season',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-ruins-alcove-laugh-01',
@@ -308,7 +308,7 @@ export const photos = [
     alt: "Expecting couple sharing a laugh tucked into a stone alcove of a heritage ruin, her hand resting on her bump",
     category: 'maternity',
     caption: "can't stop laughing",
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-forehead-kiss-corridor-01',
@@ -316,7 +316,7 @@ export const photos = [
     alt: "Expecting mother placing a gentle kiss on her husband's forehead in a sunlit stone corridor",
     category: 'maternity',
     caption: 'forehead kisses',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-ruins-collage-01',
@@ -324,7 +324,7 @@ export const photos = [
     alt: 'Collage of an expecting couple walking and embracing through the pillared corridors of a heritage ruin',
     category: 'maternity',
     caption: 'wandering together',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-marigold-swing-solo-01',
@@ -332,7 +332,7 @@ export const photos = [
     alt: 'Expecting mother in a pink silk saree seated on a marigold-decorated swing with a temple gopuram behind her',
     category: 'maternity',
     caption: 'swaying gently',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-marigold-field-solo-01',
@@ -340,7 +340,7 @@ export const photos = [
     alt: 'Expecting mother standing among marigold flowers in a pink saree under a dramatic sunset sky',
     category: 'maternity',
     caption: 'glowing',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'maternity-reading-together-ruins-01',
@@ -348,7 +348,7 @@ export const photos = [
     alt: 'Husband reading a storybook aloud to his wife as she rests her head in his lap on a heritage stone wall',
     category: 'maternity',
     caption: 'reading to you already',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'engagement-cafe-hearts-01',
@@ -372,7 +372,7 @@ export const photos = [
     alt: 'Black-and-white "My Moment: The Wedding Book" cover of the couple gazing at each other while showing off their rings, her mehndi-covered hand raised between them',
     category: 'weddings',
     caption: 'my moment',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'ring-moment-closeup-01',
@@ -380,7 +380,7 @@ export const photos = [
     alt: 'Groom in a lavender turban and his bride sharing a quiet, close look at night, her mehndi-covered hand raised with their rings',
     category: 'weddings',
     caption: 'promised forever',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'reception-cheek-kiss-01',
@@ -388,7 +388,7 @@ export const photos = [
     alt: 'Bride in a shimmering lavender gown kissing her groom on the cheek in front of a flower wall at their reception',
     category: 'weddings',
     caption: 'reception glow',
-    couple: 'Sirish & Tejaswini',
+    couple: '',
   },
   {
     id: 'bridal-branch-touch-portrait-01',

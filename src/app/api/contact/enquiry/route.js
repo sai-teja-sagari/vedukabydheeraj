@@ -3,6 +3,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const REQUIRED_FIELDS = ['name', 'email', 'phone', 'eventDate', 'location', 'message'];
+const WHATSAPP_API_VERSION = process.env.WHATSAPP_API_VERSION || 'v19.0';
 
 function buildEnquiryHtml({ name, email, phone, eventDate, location, occasionType, message }) {
   return `
@@ -19,6 +20,74 @@ function buildEnquiryHtml({ name, email, phone, eventDate, location, occasionTyp
       <p style="font-size: 14px; color: #241C12; white-space: pre-wrap;">${message}</p>
     </div>
   `;
+}
+
+function buildWhatsAppMessage({ name, email, phone, eventDate, location, occasionType, message }) {
+  const lines = [
+    '*New enquiry from website*',
+    '',
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Phone: ${phone}`,
+    `Event date: ${eventDate}`,
+    `Location: ${location}`,
+    `Occasion: ${occasionType || 'General'}`,
+    '',
+    'Message:',
+    message,
+  ];
+
+  return lines.join('\n');
+}
+
+function normalizeWhatsAppNumber(value) {
+  if (!value) return '';
+  const digits = value.replace(/\D/g, '');
+  if (!digits) return '';
+  return digits.startsWith('00') ? `+${digits.slice(2)}` : `+${digits}`;
+}
+
+async function sendWhatsAppNotification(payload) {
+  const token = process.env.WHATSAPP_ACCESS_TOKEN;
+  const phoneNumberId = process.env.WHATSAPP_PHONE_NUMBER_ID;
+  const adminNumber = process.env.WHATSAPP_ADMIN_NUMBER;
+
+  if (!token || !phoneNumberId || !adminNumber) {
+    console.warn('WhatsApp notification skipped: missing WHATSAPP_ACCESS_TOKEN, WHATSAPP_PHONE_NUMBER_ID, or WHATSAPP_ADMIN_NUMBER');
+    return { ok: false, reason: 'missing-config' };
+  }
+
+  try {
+    const apiUrl = `https://graph.facebook.com/${WHATSAPP_API_VERSION}/${phoneNumberId}/messages`;
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        messaging_product: 'whatsapp',
+        to: normalizeWhatsAppNumber(adminNumber),
+        type: 'text',
+        text: {
+          body: buildWhatsAppMessage(payload),
+        },
+      }),
+    });
+
+    const responseBody = await response.text();
+
+    if (!response.ok) {
+      console.error('WhatsApp API error:', response.status, responseBody);
+      return { ok: false, reason: responseBody };
+    }
+
+    console.log('WhatsApp message sent successfully:', responseBody);
+    return { ok: true };
+  } catch (err) {
+    console.error('WhatsApp request failed:', err);
+    return { ok: false, reason: err instanceof Error ? err.message : 'unknown-error' };
+  }
 }
 
 export async function POST(request) {
@@ -47,7 +116,22 @@ export async function POST(request) {
     }
 
     console.log('Resend accepted:', data?.id);
-    return Response.json({ success: true });
+
+    const whatsappResult = await sendWhatsAppNotification({
+      name,
+      email,
+      phone,
+      eventDate,
+      location,
+      occasionType,
+      message,
+    });
+
+    if (!whatsappResult.ok) {
+      console.warn('Email sent successfully, but WhatsApp delivery failed:', whatsappResult.reason);
+    }
+
+    return Response.json({ success: true, whatsappSent: whatsappResult.ok });
   } catch (err) {
     console.error('Resend request failed:', err);
     return Response.json({ error: 'Failed to send notification' }, { status: 500 });

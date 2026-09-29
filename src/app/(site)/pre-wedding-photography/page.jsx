@@ -6,9 +6,9 @@ import preweddingBikeForest from '../../../Images/highlights/19_prewedding_bike_
 import preweddingSareeTwirl from '../../../Images/highlights/33_prewedding_saree_twirl.jpg';
 
 export const metadata = buildMetadata({
-  title: 'Pre-Wedding Photography & Photoshoot',
+  title: 'Pre-Wedding Photography in Tandur, Telangana',
   description:
-    'Pre-wedding photography and couple photoshoots with location shoots, candid portraits, and cinematic video — styled around your story, not a fixed template.',
+    'Pre-wedding photography and couple photoshoots in Tandur, Telangana with location-based storytelling, candid portraits, and cinematic video for your love story.',
   path: '/pre-wedding-photography',
   image: redDressBeach.src,
 });

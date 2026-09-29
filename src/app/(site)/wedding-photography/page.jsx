@@ -7,9 +7,9 @@ import danceDip from '../../../Images/highlights/03_dance_dip.jpg';
 import receptionCheekKiss from '../../../Images/highlights/40_reception_cheek_kiss.jpg';
 
 export const metadata = buildMetadata({
-  title: 'Wedding Photography & Videography',
+  title: 'Wedding Photography in Tandur, Telangana',
   description:
-    'Traditional and candid wedding photography across Engagement, Haldi, Sangeeth, the wedding day, and Reception. Real coverage, real ceremonies, transparent packages.',
+    'Wedding photography and videography in Tandur, Telangana for engagements, haldi, sangeeth, wedding day, and reception coverage with candid and traditional storytelling.',
   path: '/wedding-photography',
   image: bridalPortraitMakeupCollage.src,
 });

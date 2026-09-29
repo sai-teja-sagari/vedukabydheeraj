@@ -6,9 +6,9 @@ import Contact from '../../Components/Contact';
 import { buildMetadata } from '../../lib/seoConfig';
 
 export const metadata = buildMetadata({
-  title: 'Wedding Photography & Cinematography in South India',
+  title: 'Wedding Photography & Cinematography in Tandur, Telangana',
   description:
-    'Veduka by Dheeraj captures weddings, pre-wedding shoots, engagements, birthdays, and maternity stories with candid and traditional photography across South India.',
+    'Veduka by Dheeraj is a wedding photography and cinematography studio in Tandur, Telangana, capturing weddings, pre-weddings, engagements, birthdays, and maternity stories with a candid, storytelling approach.',
   path: '/',
 });
 

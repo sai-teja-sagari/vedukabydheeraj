@@ -5,9 +5,9 @@ import danceDip from '../../../Images/highlights/03_dance_dip.jpg';
 import engagementCafeHearts from '../../../Images/highlights/20_engagement_cafe_hearts.jpg';
 
 export const metadata = buildMetadata({
-  title: 'Event Photography Services',
+  title: 'Event Photography in Tandur, Telangana',
   description:
-    'Event photography and videography across weddings, pre-weddings, engagements, and birthdays — one studio covering every occasion, with instant online estimates.',
+    'Event photography and videography in Tandur, Telangana for weddings, engagements, birthdays, and milestone celebrations with natural, story-driven coverage.',
   path: '/event-photography',
   image: danceDip.src,
 });
