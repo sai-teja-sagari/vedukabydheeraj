@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Navigation, ArrowRight } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Phone, Mail, MapPin, Navigation, ArrowRight, CalendarDays } from 'lucide-react';
 import BookingCTA from './BookingCTA';
 import BackButton from './BackButton';
 import { sanitizeByField, validateField, inputClass, labelClass } from '../lib/formValidation';
@@ -64,10 +64,29 @@ function Contact({ onSubmit, standalone = false }) {
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [sendError, setSendError] = useState(false);
+  const eventDateRef = useRef(null);
 
   // Use the local calendar day for both the picker constraint and validation.
   const today = new Date();
   const todayIso = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+  const openEventDatePicker = () => {
+    const dateInput = eventDateRef.current;
+    if (!dateInput) return;
+
+    if (typeof dateInput.showPicker !== 'function') {
+      dateInput.focus();
+      dateInput.click();
+      return;
+    }
+
+    try {
+      dateInput.showPicker();
+    } catch {
+      dateInput.focus();
+      dateInput.click();
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -371,8 +390,9 @@ function Contact({ onSubmit, standalone = false }) {
                     <label htmlFor="eventDate" className={labelClass}>
                       Event date <span className="text-red-600">*</span>
                     </label>
-                    <div className="relative min-w-0 w-full">
+                    <div className="relative mt-1.5 min-w-0 w-full">
                       <input
+                        ref={eventDateRef}
                         id="eventDate"
                         name="eventDate"
                         type="date"
@@ -381,10 +401,18 @@ function Contact({ onSubmit, standalone = false }) {
                         value={values.eventDate}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={`${inputClass} block box-border min-w-0 max-w-full`}
+                        className={`${inputClass} veduka-contact__date block box-border min-w-0 max-w-full`}
                         aria-invalid={Boolean(errors.eventDate)}
                         aria-describedby={errors.eventDate ? 'eventDate-error' : undefined}
                       />
+                      <button
+                        type="button"
+                        aria-label="Choose event date"
+                        onClick={openEventDatePicker}
+                        className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-[#7A6A4A] hover:bg-[#F5EDDC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A227]"
+                      >
+                        <CalendarDays className="h-4 w-4" aria-hidden="true" />
+                      </button>
                     </div>
                     {errors.eventDate && (
                       <p id="eventDate-error" className="mt-1 text-xs text-red-600">

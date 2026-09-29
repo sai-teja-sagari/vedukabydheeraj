@@ -25,6 +25,14 @@
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.veduka-contact__date {
+  margin-top: 0;
+}
+
+.veduka-contact__date::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .veduka-contact * {
     transition-duration: 0.01ms !important;
