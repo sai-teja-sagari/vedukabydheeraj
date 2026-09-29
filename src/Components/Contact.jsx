@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Navigation, ArrowRight, CalendarDays } from 'lucide-react';
+import { Phone, Mail, MapPin, Navigation, ArrowRight } from 'lucide-react';
 import BookingCTA from './BookingCTA';
 import BackButton from './BackButton';
 import { sanitizeByField, validateField, inputClass, labelClass } from '../lib/formValidation';
@@ -371,7 +371,7 @@ function Contact({ onSubmit, standalone = false }) {
                     <label htmlFor="eventDate" className={labelClass}>
                       Event date <span className="text-red-600">*</span>
                     </label>
-                    <div className="relative mt-1.5 min-w-0 w-full">
+                    <div className="relative min-w-0 w-full">
                       <input
                         id="eventDate"
                         name="eventDate"
@@ -381,13 +381,9 @@ function Contact({ onSubmit, standalone = false }) {
                         value={values.eventDate}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={`${inputClass} block box-border min-w-0 max-w-full pr-11`}
+                        className={`${inputClass} block box-border min-w-0 max-w-full`}
                         aria-invalid={Boolean(errors.eventDate)}
                         aria-describedby={errors.eventDate ? 'eventDate-error' : undefined}
-                      />
-                      <CalendarDays
-                        aria-hidden="true"
-                        className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9C7620]"
                       />
                     </div>
                     {errors.eventDate && (
