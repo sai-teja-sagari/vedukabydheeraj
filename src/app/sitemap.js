@@ -4,6 +4,7 @@ import { SITE_URL } from '../lib/seoConfig';
 // not indexable content.
 const ROUTES = [
   { path: '/', priority: 1.0, changeFrequency: 'weekly' },
+  { path: '/about', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/wedding-photography', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/pre-wedding-photography', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/wedding-cinematography', priority: 0.9, changeFrequency: 'monthly' },

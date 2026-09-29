@@ -2,16 +2,12 @@
 // `buildMetadata()` below so canonical URLs, Open Graph, and Twitter
 // card data all stay consistent without copy-pasting boilerplate.
 //
-// SITE_URL is a placeholder until the site is actually deployed to a
-// real domain — update this ONE constant (and nothing else) once a
-// production domain exists, and every canonical/OG/sitemap URL site-wide
-// will follow automatically.
-export const SITE_URL = 'https://www.vedukabydheeraj.com';
+export const SITE_URL = 'https://www.vedukabydheeraj.in';
 
 export const SITE_NAME = 'Veduka by Dheeraj';
 
 export const DEFAULT_DESCRIPTION =
-  'Veduka by Dheeraj is a wedding photography and cinematography studio capturing weddings, pre-wedding shoots, engagements, birthdays, and maternity stories across South India.';
+  'Veduka by Dheeraj is a wedding photography and cinematography studio based in Tandur, Telangana, creating timeless stories across South India.';
 
 export const BUSINESS = {
   name: SITE_NAME,
@@ -64,27 +60,37 @@ export function buildMetadata({ title, description, path, image, noIndex = false
 export function buildLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: BUSINESS.name,
-    image: new URL('/og-default.jpg', SITE_URL).toString(),
-    url: SITE_URL,
-    telephone: BUSINESS.telephone,
-    email: BUSINESS.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Tandur',
-      addressRegion: 'Telangana',
-      addressCountry: 'IN',
-    },
-    areaServed: 'India',
-    priceRange: '₹₹',
-    serviceType: [
-      'Wedding Photography',
-      'Wedding Cinematography',
-      'Pre-Wedding Photography',
-      'Birthday Photography',
-      'Event Photography',
-      'Maternity Photography',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: BUSINESS.name,
+        url: SITE_URL,
+        description: DEFAULT_DESCRIPTION,
+      },
+      {
+        '@type': ['ProfessionalService', 'LocalBusiness'],
+        name: BUSINESS.name,
+        image: new URL('/og-default.jpg', SITE_URL).toString(),
+        url: SITE_URL,
+        telephone: BUSINESS.telephone,
+        email: BUSINESS.email,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Tandur',
+          addressRegion: 'Telangana',
+          addressCountry: 'IN',
+        },
+        areaServed: 'India',
+        priceRange: '₹₹',
+        serviceType: [
+          'Wedding Photography',
+          'Wedding Cinematography',
+          'Pre-Wedding Photography',
+          'Birthday Photography',
+          'Event Photography',
+          'Maternity Photography',
+        ],
+      },
     ],
   };
 }

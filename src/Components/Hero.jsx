@@ -39,8 +39,9 @@ function Hero() {
           </h1>
 
           <p className="mt-5 max-w-[460px] text-[13px] leading-[1.7] text-[#6B5A42] lg:text-base">
-            From the first &quot;haldi&quot; to the last dance, we capture every unscripted moment — so your
-            story stays exactly as it felt, not just as it looked.
+            Based in Tandur, Telangana, we photograph weddings, pre-weddings, maternity stories, and life’s
+            biggest moments across South India. From the first &quot;haldi&quot; to the last dance, we capture every
+            unscripted moment — so your story stays exactly as it felt, not just as it looked.
           </p>
 
           {/* ===== CTA BUTTONS ===== */}
