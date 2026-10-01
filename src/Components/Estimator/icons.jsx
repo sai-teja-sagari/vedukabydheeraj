@@ -1,6 +1,6 @@
 // Shared icon set for the Package Estimator, backed by lucide-react so
 // every consumer here keeps importing these same names.
-import { Home, Heart, Camera, Gift, Sparkles, Crown, Video, Check, ArrowLeft, ArrowRight, User, Phone, Mail, CalendarDays, MapPin, Send } from 'lucide-react';
+import { Home, Heart, Camera, Gift, Sparkles, Gem, Crown, Video, Check, ArrowLeft, ArrowRight, User, Phone, Mail, CalendarDays, MapPin, Send } from 'lucide-react';
 
 export const HomeIcon = Home;
 export const HeartIcon = Heart;
@@ -21,6 +21,7 @@ export const PaperPlaneIcon = Send;
 
 export const EVENT_TYPE_ICONS = {
   heart: Heart,
+  gem: Gem,
   camera: Camera,
   gift: Gift,
   sparkles: Sparkles,

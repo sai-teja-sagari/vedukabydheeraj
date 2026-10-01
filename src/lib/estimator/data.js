@@ -30,6 +30,13 @@ export const EVENT_TYPES = {
     icon: 'camera',
     ceremonySteps: ['preWeddingShoot'],
   },
+  engagementOnly: {
+    id: 'engagementOnly',
+    label: 'Engagement',
+    description: 'Just the engagement: ring exchange and stage moments, captured on their own.',
+    icon: 'gem',
+    ceremonySteps: ['engagement', 'luxuryAddons'],
+  },
   birthdayEvents: {
     id: 'birthdayEvents',
     label: 'Birthday Events',

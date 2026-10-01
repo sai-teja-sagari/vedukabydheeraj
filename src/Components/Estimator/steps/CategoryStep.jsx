@@ -19,11 +19,12 @@ function CategoryStep({ headingRef, selectedPresetId, selectedEventTypeId, onSel
     selectedEventTypeId &&
     EVENT_TYPES[selectedEventTypeId].ceremonySteps.length === 0 &&
     !selectedPresetId;
+  const categoryStepCount = selectedEventTypeId ? EVENT_TYPES[selectedEventTypeId].ceremonySteps.length + 2 : 3;
 
   return (
     <div>
       <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9C7620] lg:text-xs">
-        <span aria-hidden="true">✦</span> Step 1 of 3
+        <span aria-hidden="true">✦</span> Step 1 of {categoryStepCount}
       </p>
       <h2 ref={headingRef} tabIndex={-1} className="veduka-portfolio__heading mt-2 text-[22px] text-[#241C12] lg:text-[32px]">
         Select Event Category
@@ -118,8 +119,8 @@ function CategoryStep({ headingRef, selectedPresetId, selectedEventTypeId, onSel
         <h3 className="veduka-portfolio__heading text-lg text-[#241C12]">▤ Or Choose Event Type &amp; Ceremonies</h3>
         <p className="mt-1 text-[12.5px] text-[#6B5A42]">Select your event type to reveal available service choices.</p>
 
-        <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
-          {Object.values(EVENT_TYPES).map((eventType) => {
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {Object.values(EVENT_TYPES).map((eventType, index) => {
             const Icon = EVENT_TYPE_ICONS[eventType.icon];
             const isSelected = selectedEventTypeId === eventType.id;
             return (
@@ -130,6 +131,8 @@ function CategoryStep({ headingRef, selectedPresetId, selectedEventTypeId, onSel
                 onClick={() => onSelectEventType(eventType.id)}
                 className={`rounded-2xl border bg-white p-6 text-left transition-colors duration-150 ${
                   isSelected ? 'border-[#C9A227]' : 'border-[#EEE6D2] hover:border-[#DCC98F]'
+                } lg:col-span-2 ${index === 3 ? 'lg:col-start-2' : ''} ${
+                  index === 4 ? 'sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-start-4 lg:w-auto' : ''
                 }`}
               >
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#F5EDDC] text-[#9C7620]">

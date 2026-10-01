@@ -21,7 +21,7 @@ function groupByCeremony(verifiedSelections) {
   return groups;
 }
 
-function buildQuoteHtml({ contact, eventTypeLabel, presetLabel, groups, total }) {
+function buildQuoteHtml({ contact, eventTypeId, eventTypeLabel, presetLabel, groups, total }) {
   const groupsHtml = groups
     .map(
       (group) => `
@@ -54,6 +54,7 @@ function buildQuoteHtml({ contact, eventTypeLabel, presetLabel, groups, total })
         <tr><td style="padding: 4px 0;"><strong>Event date:</strong> ${contact.eventDate}</td></tr>
         <tr><td style="padding: 4px 0;"><strong>Venue / City:</strong> ${contact.venueCity}</td></tr>
         <tr><td style="padding: 4px 0 12px;"><strong>Event type:</strong> ${eventTypeLabel}${presetLabel ? ` (${presetLabel} preset)` : ''}</td></tr>
+        <tr><td style="padding: 0 0 12px;"><strong>Event type ID:</strong> ${eventTypeId}</td></tr>
       </table>
       <table style="width: 100%;">
         ${groupsHtml || '<tr><td style="padding: 8px 0; color: #6B5A42;">No services selected — custom quote requested.</td></tr>'}
@@ -80,6 +81,7 @@ export async function POST(request) {
   // real data by looking up each submitted (ceremony, service) pair.
   const { total, verified } = verifySelections(selections, CEREMONIES);
   const groups = groupByCeremony(verified);
+  const eventTypeId = eventType ?? 'custom';
   const eventTypeLabel = EVENT_TYPES[eventType]?.label ?? eventType ?? 'Custom enquiry';
   const presetLabel = presetUsed ? PRESETS[presetUsed]?.label ?? presetUsed : null;
 
@@ -90,7 +92,7 @@ export async function POST(request) {
       from: 'Veduka Estimator <onboarding@resend.dev>',
       to: process.env.ADMIN_NOTIFICATION_EMAIL,
       subject: `New Quote Request — ${contact.fullName} (${formatRupees(total)})`,
-      html: buildQuoteHtml({ contact, eventTypeLabel, presetLabel, groups, total }),
+      html: buildQuoteHtml({ contact, eventTypeId, eventTypeLabel, presetLabel, groups, total }),
     });
 
     if (error) {
