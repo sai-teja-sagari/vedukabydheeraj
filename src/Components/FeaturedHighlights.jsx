@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Camera, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
@@ -285,15 +286,25 @@ function FeaturedHighlights() {
         >
           <ChevronLeft size={18} />
         </button>
-        <button
-          type="button"
-          aria-label="Next"
-          onClick={() => scrollByCard('next')}
-          disabled={!canScrollNext}
-          className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#241C12] shadow-lg disabled:opacity-40 md:right-3 md:h-12 md:w-12"
-        >
-          <ChevronRight size={18} />
-        </button>
+        <div className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-2 md:right-3">
+          {!canScrollNext && (
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center justify-center rounded-full bg-[#0F2A1E] px-3 py-2 text-[11px] font-medium text-[#FBF6EC] shadow-lg transition-opacity hover:opacity-90 md:px-4 md:text-xs"
+            >
+              View Portfolio
+            </Link>
+          )}
+          <button
+            type="button"
+            aria-label="Next"
+            onClick={() => scrollByCard('next')}
+            disabled={!canScrollNext}
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#241C12] shadow-lg disabled:opacity-40 md:h-12 md:w-12"
+          >
+            <ChevronRight size={18} />
+          </button>
+        </div>
       </div>
 
       {/* Floating action buttons — fixed to the viewport, not the gallery row */}
