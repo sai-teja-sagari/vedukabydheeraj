@@ -89,7 +89,7 @@ function PortfolioPage() {
       </div>
 
       {/* ===== GRID ===== */}
-      <div className="mt-10 grid grid-cols-1 gap-5 lg:mt-14 lg:grid-cols-3 lg:gap-[26px]">
+      <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:mt-14 lg:grid-cols-3 lg:gap-[26px]">
         {filteredPhotos.map((photo, index) => (
           <button
             // Keying on the active category (not just the photo id) forces
@@ -100,19 +100,19 @@ function PortfolioPage() {
             type="button"
             aria-label={photo.alt}
             onClick={() => setLightboxIndex(index)}
-            className="veduka-portfolio__card group rounded-sm border border-[#EEE6D2] bg-white p-[14px_14px_30px] text-left shadow-[0_4px_14px_rgba(36,28,18,0.06)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(36,28,18,0.12)]"
+            className="veduka-portfolio__card group flex h-full flex-col rounded-sm border border-[#EEE6D2] bg-white p-[10px_10px_22px] text-left shadow-[0_4px_14px_rgba(36,28,18,0.06)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(36,28,18,0.12)] sm:p-[14px_14px_30px]"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px]">
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 loading="lazy"
                 fill
-                sizes="(min-width: 1024px) 33vw, 100vw"
-                className="object-cover"
+                sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 50vw"
+                className="h-full w-full object-cover object-center"
               />
             </div>
-            <p className="veduka-portfolio__caption mt-4 text-center text-[15px] italic text-[#9C7620]">
+            <p className="veduka-portfolio__caption mt-3 text-center text-[12px] italic text-[#9C7620] sm:mt-4 sm:text-[15px]">
               {photo.caption}
             </p>
           </button>

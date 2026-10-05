@@ -1,6 +1,6 @@
 import ServicePage from '../../../Components/ServicePage';
 import { buildMetadata } from '../../../lib/seoConfig';
-import bridalPortraitMakeupCollage from '../../../Images/highlights/bridal_portrait_makeup_collage.jpg';
+import bridalPortraitPoster from '../../../Images/highlights/15_bridal_portrait_poster.jpg';
 import engagementTempleSteps from '../../../Images/highlights/21_engagement_temple_steps.jpg';
 import mehndiBridePortrait from '../../../Images/highlights/37_mehndi_bride_portrait.jpg';
 import danceDip from '../../../Images/highlights/03_dance_dip.jpg';
@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
   description:
     'Wedding photography and videography in Tandur, Telangana for engagements, haldi, sangeeth, wedding day, and reception coverage with candid and traditional storytelling.',
   path: '/wedding-photography',
-  image: bridalPortraitMakeupCollage.src,
+  image: bridalPortraitPoster.src,
 });
 
 const SECTIONS = [
@@ -86,8 +86,8 @@ export default function WeddingPhotographyPage() {
       eyebrow="Wedding Photography"
       h1="Wedding Photography & Videography by Veduka by Dheeraj"
       intro="Traditional and candid wedding photography and videography across every ceremony — Engagement, Haldi, Sangeeth, the wedding day, and Reception — with coverage you can build around the functions you’re actually hosting."
-      heroImage={bridalPortraitMakeupCollage}
-      heroAlt="Bridal portrait collage: a smiling bride in a red and white saree, the couple's hands during a ritual, bridal makeup and cosmetics, and the bride posing outdoors under foliage"
+      heroImage={bridalPortraitPoster}
+      heroAlt="Bride's close-up portrait framed by watercolor leaves on a wedding album page"
       sections={SECTIONS}
       faqs={FAQS}
       relatedServices={RELATED}

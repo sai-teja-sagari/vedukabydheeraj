@@ -60,6 +60,16 @@ import haldiBrideLeafPortrait from '../Images/highlights/44_haldi_bride_leaf_por
 import receptionStageDecorCollage from '../Images/highlights/45_reception_stage_decor_collage.jpg';
 import familyColorSplashPortrait from '../Images/highlights/46_family_color_splash_portrait.jpg';
 import colorSplashCelebrationCollage from '../Images/highlights/47_color_splash_celebration_collage.jpg';
+import amruthaSaikiranWeddingPortrait from '../Images/highlights/48_amrutha_saikiran_wedding_portrait.png';
+import amruthaSaikiranLook from '../Images/highlights/49_amrutha_saikiran_look.png';
+import amsaPoster from '../Images/highlights/50_amsa_poster.png';
+import bridePortraitFrame from '../Images/highlights/51_bride_portrait_frame.png';
+import amberBridalPortrait from '../Images/highlights/52_amber_bridal_portrait.png';
+import ringCeremony from '../Images/highlights/53_ring_ceremony.png';
+import ringExchangeDetail from '../Images/highlights/54_ring_exchange_detail.png';
+import moonlitEngagementPoster from '../Images/highlights/55_moonlit_engagement_poster.png';
+import bridePortraitEngagement from '../Images/highlights/56_bride_portrait_engagement.png';
+import iWillDoMyBestForYou from '../Images/highlights/57_i_will_do_my_best_for_you.png';
 
 export const categories = [
   { key: 'all', label: 'All Work' },
@@ -354,7 +364,7 @@ export const photos = [
     id: 'engagement-cafe-hearts-01',
     src: engagementCafeHearts,
     alt: 'Collage of a couple\'s cafe date with latte-art hearts and candid laughs, branded "AMSA - Amrutha Saikiran"',
-    category: 'engagement',
+    category: 'pre-wedding',
     caption: 'our little dates',
     couple: 'Amrutha & Saikiran',
   },
@@ -362,7 +372,7 @@ export const photos = [
     id: 'engagement-temple-steps-01',
     src: engagementTempleSteps,
     alt: 'Couple sitting together on ancient stone steps, sharing a quiet laugh in casual traditional wear',
-    category: 'engagement',
+    category: 'pre-wedding',
     caption: 'just talking',
     couple: 'Amrutha & Saikiran',
   },
@@ -446,4 +456,82 @@ export const photos = [
     caption: 'splashed with joy',
     couple: 'Wedding Moments',
   },
-];
+  {
+    id: 'amrutha-saikiran-wedding-portrait-01',
+    src: amruthaSaikiranWeddingPortrait,
+    alt: 'Portrait of Amrutha and Saikiran standing together in traditional bridal attire against a soft warm background',
+    category: 'weddings',
+    caption: 'amrutha & saikiran',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'amrutha-saikiran-look-01',
+    src: amruthaSaikiranLook,
+    alt: 'Close bridal portrait of the couple facing each other with warm golden lighting and festive traditional outfits',
+    category: 'weddings',
+    caption: 'just looking at each other',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'amsa-poster-01',
+    src: amsaPoster,
+    alt: 'AMSA poster-style portrait of the bride in traditional jewellery with a dreamy floral and forest overlay',
+    category: 'weddings',
+    caption: 'amsa',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'bride-portrait-frame-01',
+    src: bridePortraitFrame,
+    alt: 'Bride portrait framed in a white panel with warm sunset colours and clean editorial styling',
+    category: 'weddings',
+    caption: 'bride in bloom',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'amber-bridal-portrait-01',
+    src: amberBridalPortrait,
+    alt: 'Close-up bridal portrait with traditional jewellery, soft beige backdrop, and elegant bridal styling',
+    category: 'weddings',
+    caption: 'amber glow',
+    couple: 'Amrutha & Saikiran',
+  },  {
+    id: 'ring-ceremony-01',
+    src: ringCeremony,
+    alt: 'Couple exchanging rings during a decorated engagement ceremony with floral garlands and warm golden light',
+    category: 'engagement',
+    caption: 'ring ceremony',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'ring-exchange-detail-01',
+    src: ringExchangeDetail,
+    alt: 'Close detail of the couple exchanging rings during the engagement, with henna-decorated hands and bracelets',
+    category: 'engagement',
+    caption: 'promise in a ring',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'moonlit-engagement-poster-01',
+    src: moonlitEngagementPoster,
+    alt: 'Moonlit engagement poster of the bride in traditional attire, framed with a glowing moon and temple silhouette',
+    category: 'engagement',
+    caption: 'engagement moments',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'bride-portrait-engagement-01',
+    src: bridePortraitEngagement,
+    alt: 'Bride smiling in her traditional saree during a moody engagement portrait with floral ornaments and dramatic lighting',
+    category: 'engagement',
+    caption: 'bride in bloom',
+    couple: 'Amrutha & Saikiran',
+  },
+  {
+    id: 'i-will-do-my-best-for-you-01',
+    src: iWillDoMyBestForYou,
+    alt: 'Stylized engagement portrait of the couple standing together in a pastel-toned backdrop with bold typography',
+    category: 'engagement',
+    caption: 'for you',
+    couple: 'Amrutha & Saikiran',
+  },];
