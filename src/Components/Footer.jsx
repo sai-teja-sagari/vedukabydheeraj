@@ -24,7 +24,7 @@ const CONTACT = {
 const SOCIAL_LINKS = [
   {
     label: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/dp_fotohub83?stkn=MTA1d3lwNjBtcm0zeA==',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -49,7 +49,7 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'YouTube',
-    href: 'https://youtube.com',
+    href: 'https://youtube.com/@dheerajdandudandu7262?si=JDymXyWXPN9QMlam',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
         <rect x="3" y="6" width="18" height="12" rx="4" />
