@@ -16,6 +16,8 @@ import smittenPhoto from '../Images/highlights/03_dance_dip.jpg';
 import beginningsPhoto from '../Images/highlights/02_pre_wedding_splash.jpg';
  
 const WHATSAPP_LINK = 'https://wa.me/919133002002';
+const INSTAGRAM_LINK = 'https://www.instagram.com/dp_fotohub83?stkn=MTA1d3lwNjBtcm0zeA==';
+const YOUTUBE_LINK = 'https://youtube.com/@dheerajdandudandu7262?si=JDymXyWXPN9QMlam';
 
 // NOTE: most cards below still show the gradient + camera-icon placeholder.
 // To add a real photo to a card (existing or new), import the image file and
@@ -135,6 +137,20 @@ const LIGHTBOX_PHOTOS = CARDS.filter((card) => card.image).map((card) => ({
 const WhatsAppIcon = ({ className }) => (
   <svg viewBox="0 0 24 24" className={className} fill="#FFFFFF" aria-hidden="true">
     <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.06L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.68 14.24c-.24.68-1.4 1.32-1.92 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.83-4.2-4.98-4.4-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.11.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.75 1.24 1.61 2 1.11 1 2.05 1.3 2.34 1.45.29.14.46.12.63-.05.18-.18.75-.87.95-1.17.2-.29.4-.24.66-.15.27.1 1.7.8 2 .95.29.14.48.21.55.33.07.14.07.72-.17 1.4Z" />
+  </svg>
+);
+
+const InstagramIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+    <circle cx="12" cy="12" r="4.5" />
+    <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const YouTubeIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+    <path d="M23.5 7.2a3.08 3.08 0 0 0-2.18-2.18C19.53 4.62 12 4.62 12 4.62s-7.53 0-9.32.4A3.08 3.08 0 0 0 .5 7.2 31.82 31.82 0 0 0 0 12a31.82 31.82 0 0 0 .5 4.8 3.08 3.08 0 0 0 2.18 2.18c1.79.4 9.32.4 9.32.4s7.53 0 9.32-.4a3.08 3.08 0 0 0 2.18-2.18A31.82 31.82 0 0 0 24 12a31.82 31.82 0 0 0-.5-4.8ZM9.75 15.5v-7l6.5 3.5-6.5 3.5Z" />
   </svg>
 );
 
@@ -282,6 +298,24 @@ function FeaturedHighlights() {
 
       {/* Floating action buttons — fixed to the viewport, not the gallery row */}
       <div className="fixed bottom-6 right-5 z-40 flex flex-col items-center gap-3.5 md:bottom-8 md:right-8">
+        <a
+          href={INSTAGRAM_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Follow Veduka by Dheeraj on Instagram"
+          className="veduka-highlights__fab flex h-10 w-10 items-center justify-center rounded-full bg-[#E1306C] text-white shadow-lg md:h-[46px] md:w-[46px]"
+        >
+          <InstagramIcon className="h-5 w-5 md:h-6 md:w-6" />
+        </a>
+        <a
+          href={YOUTUBE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Watch Veduka by Dheeraj on YouTube"
+          className="veduka-highlights__fab flex h-10 w-10 items-center justify-center rounded-full bg-[#FF0000] text-white shadow-lg md:h-[46px] md:w-[46px]"
+        >
+          <YouTubeIcon className="h-5 w-5 md:h-6 md:w-6" />
+        </a>
         <a
           href={WHATSAPP_LINK}
           target="_blank"

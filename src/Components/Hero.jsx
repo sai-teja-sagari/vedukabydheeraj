@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Camera, Heart, Star, ArrowRight } from 'lucide-react';
-import heroPhoto from '../Images/Front-page.jpg';
+import heroPhoto from '../Images/highlights/18_wedding_dip_title.jpg';
 import accentPhoto from '../Images/image.jpg';
 
 // NOTE: the floating badge's "500+" figure below is still a placeholder —
@@ -81,11 +81,11 @@ function Hero() {
           <div className="absolute right-0 top-0 h-[280px] w-[230px] overflow-hidden rounded-md border-[6px] border-[#FBF6EC] shadow-lg ring-1 ring-[#DCC98F] lg:h-[520px] lg:w-[420px]">
             <Image
               src={heroPhoto}
-              alt="Bride and groom during their wedding celebration"
+              alt="Couple in a romantic wedding dip portrait"
               fill
               priority
               sizes="(min-width: 1024px) 420px, 230px"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
 
