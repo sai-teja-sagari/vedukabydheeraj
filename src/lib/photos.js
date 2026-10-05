@@ -70,6 +70,13 @@ import ringExchangeDetail from '../Images/highlights/54_ring_exchange_detail.png
 import moonlitEngagementPoster from '../Images/highlights/55_moonlit_engagement_poster.png';
 import bridePortraitEngagement from '../Images/highlights/56_bride_portrait_engagement.png';
 import iWillDoMyBestForYou from '../Images/highlights/57_i_will_do_my_best_for_you.png';
+import royalCouplePortrait from '../Images/highlights/58_royal_couple_portrait.jpg';
+import royalGroomPortrait from '../Images/highlights/59_royal_groom_portrait.jpg';
+import mostBeautifulDay from '../Images/highlights/60_the_most_beautiful_day.jpg';
+import holdingHandsMountain from '../Images/highlights/61_holding_hands_mountain.jpg';
+import soulmatePoster from '../Images/highlights/62_soulmate_poster.jpg';
+import brideWithCoconut from '../Images/highlights/63_bride_with_coconut.jpg';
+import marriagePortrait from '../Images/highlights/64_marriage_portrait.jpg';
 
 export const categories = [
   { key: 'all', label: 'All Work' },
@@ -455,6 +462,62 @@ export const photos = [
     category: 'weddings',
     caption: 'splashed with joy',
     couple: 'Wedding Moments',
+  },
+  {
+    id: 'royal-couple-portrait-01',
+    src: royalCouplePortrait,
+    alt: 'Royal wedding portrait of the bride and groom standing together in regal colours under a rich maroon backdrop',
+    category: 'weddings',
+    caption: 'royal couple',
+    couple: '',
+  },
+  {
+    id: 'royal-groom-portrait-01',
+    src: royalGroomPortrait,
+    alt: 'Groom portrait in a golden royal turban and embroidered wedding attire with a warm maroon background',
+    category: 'weddings',
+    caption: 'royal groom',
+    couple: '',
+  },
+  {
+    id: 'most-beautiful-day-01',
+    src: mostBeautifulDay,
+    alt: 'Silhouette of the newlyweds embracing in a romantic dark purple light with the text The Most Beautiful Day',
+    category: 'weddings',
+    caption: 'the most beautiful day',
+    couple: '',
+  },
+  {
+    id: 'holding-hands-mountain-01',
+    src: holdingHandsMountain,
+    alt: 'Wedding pose of the couple holding hands in front of a dramatic mountain backdrop, framed in a vintage black-and-white effect',
+    category: 'weddings',
+    caption: 'holding hands',
+    couple: '',
+  },
+  {
+    id: 'soulmate-poster-01',
+    src: soulmatePoster,
+    alt: 'Dreamy blue-toned poster of the couple standing together in the forest, titled Soulmate',
+    category: 'weddings',
+    caption: 'soulmate',
+    couple: 'Saikiran & Amrutha',
+  },
+  {
+    id: 'bride-with-coconut-01',
+    src: brideWithCoconut,
+    alt: 'Traditional bridal portrait of the smiling bride in bright red and white wedding attire holding a coconut',
+    category: 'weddings',
+    caption: 'blessed and glowing',
+    couple: '',
+  },
+  {
+    id: 'marriage-portrait-01',
+    src: marriagePortrait,
+    alt: 'Close wedding portrait of the bride smiling in elaborate jewellery and white wedding saree with a soft floral backdrop',
+    category: 'weddings',
+    caption: 'marriage portrait',
+    couple: '',
   },
   {
     id: 'amrutha-saikiran-wedding-portrait-01',
