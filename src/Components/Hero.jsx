@@ -9,7 +9,7 @@ import accentPhoto from '../Images/image.jpg';
 
 const STATS = [
   { icon: Camera, number: '500+', label: 'Celebrations captured' },
-  { icon: Heart, number: '10+', label: 'Years behind the lens' },
+  { icon: Heart, number: '15+', label: 'Years behind the lens' },
   { icon: Star, number: '100%', label: 'Happy celebrations' },
 ];
 
