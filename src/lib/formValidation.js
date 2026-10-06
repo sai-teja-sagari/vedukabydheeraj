@@ -13,7 +13,7 @@ export const labelClass = 'block text-[11px] font-medium uppercase tracking-[0.1
 // than only flagged after submit.
 const NAME_ALLOWED_CHARS = /[^A-Za-z\s.'&-]/g;
 const LOCATION_ALLOWED_CHARS = /[^A-Za-z\s,.'-]/g;
-const PHONE_ALLOWED_CHARS = /[^\d+\s-]/g;
+const PHONE_ALLOWED_CHARS = /[^\d]/g;
 
 const NAME_PATTERN = /^[A-Za-z][A-Za-z\s.'&-]{1,59}$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -24,7 +24,7 @@ const LOCATION_PATTERN = /^[A-Za-z][A-Za-z\s,.'-]{1,79}$/;
 export function sanitizeByField(name, value) {
   if (name === 'name') return value.replace(NAME_ALLOWED_CHARS, '');
   if (name === 'location') return value.replace(LOCATION_ALLOWED_CHARS, '');
-  if (name === 'phone') return value.replace(PHONE_ALLOWED_CHARS, '');
+  if (name === 'phone') return value.replace(PHONE_ALLOWED_CHARS, '').slice(0, 10);
   return value;
 }
 
@@ -42,8 +42,8 @@ export function validateField(name, rawValue, todayIso) {
       return '';
     case 'phone': {
       if (!value) return 'Please enter a phone number.';
-      const digitCount = (value.match(/\d/g) || []).length;
-      if (digitCount < 7 || digitCount > 15) return 'Please enter a valid phone number.';
+      const digits = value.replace(/\D/g, '');
+      if (digits.length !== 10) return 'Please enter a valid 10-digit mobile number.';
       return '';
     }
     case 'eventDate':

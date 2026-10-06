@@ -371,10 +371,12 @@ function Contact({ onSubmit, standalone = false }) {
                       name="phone"
                       type="tel"
                       required
+                      inputMode="numeric"
+                      maxLength={10}
                       value={values.phone}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      placeholder="+91 98765 43210"
+                      placeholder="9876543210"
                       className={inputClass}
                       aria-invalid={Boolean(errors.phone)}
                       aria-describedby={errors.phone ? 'phone-error' : undefined}

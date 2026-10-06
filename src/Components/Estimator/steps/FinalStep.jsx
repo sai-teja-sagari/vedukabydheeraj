@@ -122,6 +122,8 @@ function FinalStep({
                 name="whatsapp"
                 type="tel"
                 required
+                inputMode="numeric"
+                maxLength={10}
                 value={contact.whatsapp}
                 onChange={onFieldChange}
                 onBlur={onFieldBlur}
