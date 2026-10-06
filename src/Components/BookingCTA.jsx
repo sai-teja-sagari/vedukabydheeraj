@@ -8,7 +8,7 @@ const WHATSAPP_LINK = 'https://wa.me/919133002002';
 // This component relies on 'Poppins' + 'Playfair Display' already being
 // loaded — both are imported once, globally, via src/app/globals.css.
 
-const FEATURE_PILLS = ['Instant PDF Estimate', 'Direct Date Lock', 'Fast WhatsApp Follow-up'];
+const FEATURE_PILLS = ['Direct Date Lock', 'Fast WhatsApp Follow-up'];
 
 const STATS = [
   { label: 'Response Time', value: 'Quick' },
