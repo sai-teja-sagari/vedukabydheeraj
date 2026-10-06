@@ -3,6 +3,7 @@ import AboutPhotographer from '../../Components/AboutPhotographer';
 import Services from '../../Components/Services';
 import FeaturedHighlights from '../../Components/FeaturedHighlights';
 import Contact from '../../Components/Contact';
+import FrequentlyAskedQuestions from '../../Components/FrequentlyAskedQuestions';
 import { buildMetadata } from '../../lib/seoConfig';
 
 export const metadata = buildMetadata({
@@ -20,6 +21,7 @@ export default function Home() {
       <FeaturedHighlights />
       <Contact />
       <AboutPhotographer />
+      <FrequentlyAskedQuestions />
     </>
   );
 }

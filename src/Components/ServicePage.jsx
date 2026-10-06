@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import BackButton from './BackButton';
+import ServiceFaqAccordion from './ServiceFaqAccordion';
 
 // Brand icon lucide doesn't carry — kept as a custom SVG so the WhatsApp CTA
 // stays visually consistent with every other WhatsApp button on the site.
@@ -19,9 +20,8 @@ const FAQ_WHATSAPP_LINK = 'https://wa.me/919133002002';
  * sections, H3 FAQ questions), internal linking, and CTA placement
  * consistent across all of them instead of duplicating markup per page.
  *
- * `sections` and `faqs` are plain server-rendered content — no client JS
- * needed (the FAQ accordion uses native <details>), so these pages stay
- * fast and fully crawlable.
+ * `sections` and `faqs` are plain content; the FAQ interaction is isolated
+ * in a client component so the rest of each service page stays server-rendered.
  */
 function ServicePage({
   eyebrow,
@@ -129,24 +129,7 @@ function ServicePage({
 
             {/* Accordion — right column on desktop, spans both intro + CTA rows */}
             <div className="flex flex-col lg:col-start-2 lg:row-start-1 lg:row-span-2">
-              {faqs.map(({ q, a }, index) => (
-                <details
-                  key={q}
-                  open={index === 0}
-                  className="group border-b border-[#DCC98F] py-5 first:pt-0 last:border-b-0 [&_summary::-webkit-details-marker]:hidden"
-                >
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                    <span className="flex gap-3">
-                      <span className="mt-0.5 text-[11px] font-bold text-[#C9A227]">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <h3 className="text-sm font-semibold text-[#241C12] lg:text-base">{q}</h3>
-                    </span>
-                    <ChevronDown className="mt-1 h-4 w-4 shrink-0 text-[#241C12] transition-transform duration-200 group-open:rotate-180" />
-                  </summary>
-                  <p className="mt-3 pl-[26px] text-[13px] leading-[1.7] text-[#6B5A42]">{a}</p>
-                </details>
-              ))}
+              <ServiceFaqAccordion faqs={faqs} />
             </div>
 
             {/* "Still not sure?" CTA — under the intro on desktop, end of stack on mobile */}

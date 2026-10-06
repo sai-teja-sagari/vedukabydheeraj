@@ -1,4 +1,5 @@
 import Contact from '../../../Components/Contact';
+import FrequentlyAskedQuestions from '../../../Components/FrequentlyAskedQuestions';
 import { buildMetadata } from '../../../lib/seoConfig';
 
 export const metadata = buildMetadata({
@@ -9,5 +10,10 @@ export const metadata = buildMetadata({
 });
 
 export default function ContactRoute() {
-  return <Contact standalone />;
+  return (
+    <>
+      <Contact standalone />
+      <FrequentlyAskedQuestions />
+    </>
+  );
 }
