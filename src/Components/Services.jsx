@@ -50,7 +50,38 @@ const SERVICES = [
     description: 'Milestones and tiny toes, celebrated in style.',
     href: '/birthday-photography',
   },
+  {
+    Icon: Landmark,
+    title: 'House Warming & Rituals',
+    description: 'Photo and video for housewarmings and vratham.',
+    href: '/event-photography',
+  },
+  {
+    Icon: Camera,
+    title: 'Saree & Dhoti Function & Others',
+    description: 'Saree, dhoti and family celebrations, captured with care.',
+    href: '/event-photography',
+  },
 ];
+
+function ServiceCard({ service, className = '' }) {
+  const { Icon, title, description, href } = service;
+
+  return (
+    <Link
+      href={href}
+      className={`flex items-center gap-4 rounded-md border border-[#E9DCBB] bg-[#F5EDDC] p-5 text-left transition-colors duration-150 hover:border-[#C9A227] lg:flex-col lg:gap-0 lg:px-5 lg:py-9 lg:text-center ${className}`}
+    >
+      <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#EDE1C4] text-[#9C7620] lg:mb-[22px] lg:h-[74px] lg:w-[74px]">
+        <Icon className="h-6 w-6 lg:h-8 lg:w-8" strokeWidth={1.3} />
+      </span>
+      <div>
+        <h3 className="text-sm font-semibold text-[#241C12] lg:mb-2.5 lg:text-base">{title}</h3>
+        <p className="mt-1 text-[11px] leading-[1.6] text-[#6B5A42] lg:mt-0 lg:text-[12.5px]">{description}</p>
+      </div>
+    </Link>
+  );
+}
 
 function Services() {
   return (
@@ -84,22 +115,14 @@ function Services() {
 
       {/* ===== CARDS ===== */}
       <div className="grid grid-cols-1 gap-[14px] lg:grid-cols-5 lg:gap-[22px]">
-        {SERVICES.map(({ Icon, title, description, href }) => (
-          <Link
-            key={title}
-            href={href}
-            className="flex items-center gap-4 rounded-md border border-[#E9DCBB] bg-[#F5EDDC] p-5 text-left transition-colors duration-150 hover:border-[#C9A227] lg:flex-col lg:gap-0 lg:px-5 lg:py-9 lg:text-center"
-          >
-            <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#EDE1C4] text-[#9C7620] lg:mb-[22px] lg:h-[74px] lg:w-[74px]">
-              <Icon className="h-6 w-6 lg:h-8 lg:w-8" strokeWidth={1.3} />
-            </span>
-            <div>
-              <h3 className="text-sm font-semibold text-[#241C12] lg:mb-2.5 lg:text-base">{title}</h3>
-              <p className="mt-1 text-[11px] leading-[1.6] text-[#6B5A42] lg:mt-0 lg:text-[12.5px]">
-                {description}
-              </p>
-            </div>
-          </Link>
+        {SERVICES.slice(0, 5).map((service) => (
+          <ServiceCard key={service.title} service={service} />
+        ))}
+      </div>
+
+      <div className="mt-[14px] grid grid-cols-1 gap-[14px] lg:mt-[22px] lg:flex lg:justify-center lg:gap-[22px]">
+        {SERVICES.slice(5).map((service) => (
+          <ServiceCard key={service.title} service={service} className="lg:basis-[calc((100%_-_88px)_/_5)]" />
         ))}
       </div>
 
