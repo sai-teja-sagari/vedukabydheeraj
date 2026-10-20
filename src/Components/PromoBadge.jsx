@@ -7,7 +7,7 @@ function PromoBadge() {
         FREE
       </span>
       <span className="mt-1 max-w-[56px] font-[Poppins] text-[5.5px] font-semibold leading-[1.25] text-[#FBF6EC] lg:mt-1.5 lg:max-w-[80px] lg:text-[9px]">
-        Instant Event Photo Reel — delivered same day
+        Instant Event Photo Reel — Delivered same day
       </span>
     </div>
   );

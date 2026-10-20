@@ -126,6 +126,7 @@ function EstimatorWizard() {
   const currentCeremonyId = !isCategoryStep && !isFinalStep ? ceremonyIds[state.currentStepIndex - 1] : null;
 
   const { total, count } = calculateTotal(state.selectedServiceIds, CEREMONIES);
+  const selections = buildSelections(state.selectedServiceIds, ceremonyIds, CEREMONIES);
 
   const stepLabels = eventType
     ? [{ label: 'Category' }, ...ceremonyIds.map((id) => ({ label: CEREMONIES[id].title })), { label: 'Final Step' }]
@@ -182,7 +183,6 @@ function EstimatorWizard() {
     dispatch({ type: 'SUBMIT_START' });
 
     try {
-      const selections = buildSelections(state.selectedServiceIds, ceremonyIds, CEREMONIES);
       const res = await fetch('/api/estimator/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -244,6 +244,7 @@ function EstimatorWizard() {
             todayIso={todayIso}
             itemCount={count}
             total={total}
+            selections={selections}
             isSubmitting={state.isSubmitting}
             submitted={state.submitted}
             submitError={state.submitError}

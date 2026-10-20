@@ -45,6 +45,7 @@ function FinalStep({
   todayIso,
   itemCount,
   total,
+  selections,
   isSubmitting,
   submitted,
   submitError,
@@ -224,6 +225,19 @@ function FinalStep({
         </div>
 
         <div className="mt-6 border-t border-[#EEE6D2] pt-5">
+          {selections.length > 0 && (
+            <div className="mb-5">
+              <h3 className="text-sm font-semibold text-[#241C12]">Selected Coverage</h3>
+              <ul className="mt-3 space-y-2">
+                {selections.map(({ ceremony, service, price }) => (
+                  <li key={`${ceremony}-${service}`} className="flex items-start justify-between gap-4 text-[12px] text-[#4A3B2A]">
+                    <span>{ceremony}: {service}</span>
+                    <span className="shrink-0 font-medium">{formatRupees(price)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div className="flex items-center justify-between text-sm text-[#4A3B2A]">
             <span>Selected Services Count</span>
             <span className="font-semibold text-[#241C12]">{itemCount} items</span>

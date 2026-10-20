@@ -46,14 +46,14 @@ export const EVENT_TYPES = {
   },
   vrathamRituals: {
     id: 'vrathamRituals',
-    label: 'Vratham & Rituals',
-    description: 'Housewarming, religious rituals and intimate family gatherings.',
+    label: 'House Warming & Rituals',
+    description: 'Housewarming, vratham and intimate family celebrations.',
     icon: 'sparkles',
-    ceremonySteps: ['vrathamRitual'],
+    ceremonySteps: ['vrathamRitual', 'luxuryAddons'],
   },
   sareeDhotiFunction: {
     id: 'sareeDhotiFunction',
-    label: 'Saree & Dhoti Function',
+    label: 'Saree & Dhoti Function & Others',
     description: 'Traditional photography and video coverage for your family celebration.',
     icon: 'camera',
     ceremonySteps: ['sareeDhotiFunction', 'luxuryAddons'],
@@ -194,16 +194,19 @@ export const CEREMONIES = {
   },
   vrathamRitual: {
     id: 'vrathamRitual',
-    title: 'Vratham & Rituals',
-    subtitle: 'Housewarming and religious ritual coverage.',
+    title: 'House Warming & Rituals',
+    subtitle: 'Photography and video coverage for housewarmings and vratham rituals.',
     services: [
-      { id: 'vr-trad-photo', name: 'Traditional Photo', description: 'Premium photography and videography service.', price: 8000, defaultSelected: true },
-      { id: 'vr-trad-video', name: 'Traditional Video', description: 'Premium photography and videography service.', price: 8000, defaultSelected: false },
+      { id: 'vr-trad-photo', name: 'Traditional Photo', description: 'Premium photography and videography service.', price: 10000, defaultSelected: false },
+      { id: 'vr-trad-video', name: 'Traditional Video', description: 'Premium photography and videography service.', price: 10000, defaultSelected: false },
+      { id: 'vr-candid-photo', name: 'Candid Photo', description: 'Premium photography and videography service.', price: 15000, defaultSelected: false },
+      { id: 'vr-cinematic-video', name: 'Cinematic Video', description: 'Premium photography and videography service.', price: 15000, defaultSelected: false },
+      { id: 'vr-drone', name: 'Drone Coverage', description: 'Premium photography and videography service.', price: 12000, defaultSelected: false },
     ],
   },
   sareeDhotiFunction: {
     id: 'sareeDhotiFunction',
-    title: 'Saree & Dhoti Function',
+    title: 'Saree & Dhoti Function & Others',
     subtitle: 'Choose the photography and video coverage for your function.',
     services: [
       { id: 'sd-trad-photo', name: 'Traditional Photo', description: 'Premium photography and videography service.', price: 10000, defaultSelected: false },
