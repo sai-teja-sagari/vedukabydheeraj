@@ -118,6 +118,59 @@
   background-size: cover;
 }
 
+@keyframes promoBadgePulse {
+  0%,
+  100% {
+    box-shadow: var(--shadow-xl), 0 0 0 0 rgba(232, 190, 78, 0);
+  }
+
+  50% {
+    box-shadow: var(--shadow-xl), 0 0 0 10px rgba(232, 190, 78, 0.22);
+  }
+}
+
+.promo-badge {
+  box-shadow: var(--shadow-xl);
+  animation: promoBadgePulse 2.8s ease-in-out infinite;
+}
+
+.promo-badge::before {
+  position: absolute;
+  top: -5px;
+  left: 25%;
+  width: 38%;
+  height: 6px;
+  border: 1px solid rgba(232, 190, 78, 0.7);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background: #0F2A1E;
+  content: '';
+}
+
+.promo-badge__lens {
+  width: 7px;
+  height: 7px;
+  margin-bottom: 2px;
+  border: 1px solid #E8BE4E;
+  border-radius: 50%;
+}
+
+.promo-badge__flash {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #E8BE4E;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-badge {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .veduka-hero * {
     transition-duration: 0.01ms !important;

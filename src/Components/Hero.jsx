@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Camera, Heart, Star, ArrowRight } from 'lucide-react';
 import heroPhoto from '../Images/highlights/18_wedding_dip_title.jpg';
 import accentPhoto from '../Images/image.jpg';
+import PromoBadge from './PromoBadge';
 
 // NOTE: the floating badge's "500+" figure below is still a placeholder —
 // update it to reflect real numbers before launch.
@@ -77,6 +78,8 @@ function Hero() {
 
         {/* ===== RIGHT COLUMN: PHOTO COLLAGE ===== */}
         <div className="relative h-[300px] w-full lg:h-[600px]">
+          <PromoBadge />
+
           {/* Main photo */}
           <div className="absolute right-0 top-0 h-[280px] w-[230px] overflow-hidden rounded-md border-[6px] border-[#FBF6EC] shadow-lg ring-1 ring-[#DCC98F] lg:h-[520px] lg:w-[420px]">
             <Image

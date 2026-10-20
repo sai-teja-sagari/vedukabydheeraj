@@ -51,6 +51,13 @@ export const EVENT_TYPES = {
     icon: 'sparkles',
     ceremonySteps: ['vrathamRitual'],
   },
+  sareeDhotiFunction: {
+    id: 'sareeDhotiFunction',
+    label: 'Saree & Dhoti Function',
+    description: 'Traditional photography and video coverage for your family celebration.',
+    icon: 'camera',
+    ceremonySteps: ['sareeDhotiFunction', 'luxuryAddons'],
+  },
 };
 
 // Curated presets shown as shortcuts on Step 1. Selecting one auto-selects
@@ -192,6 +199,18 @@ export const CEREMONIES = {
     services: [
       { id: 'vr-trad-photo', name: 'Traditional Photo', description: 'Premium photography and videography service.', price: 8000, defaultSelected: true },
       { id: 'vr-trad-video', name: 'Traditional Video', description: 'Premium photography and videography service.', price: 8000, defaultSelected: false },
+    ],
+  },
+  sareeDhotiFunction: {
+    id: 'sareeDhotiFunction',
+    title: 'Saree & Dhoti Function',
+    subtitle: 'Choose the photography and video coverage for your function.',
+    services: [
+      { id: 'sd-trad-photo', name: 'Traditional Photo', description: 'Premium photography and videography service.', price: 10000, defaultSelected: false },
+      { id: 'sd-trad-video', name: 'Traditional Video', description: 'Premium photography and videography service.', price: 10000, defaultSelected: false },
+      { id: 'sd-candid-photo', name: 'Candid Photo', description: 'Premium photography and videography service.', price: 15000, defaultSelected: false },
+      { id: 'sd-candid-video', name: 'Cinematic Video', description: 'Premium photography and videography service.', price: 15000, defaultSelected: false },
+      { id: 'sd-drone', name: 'Drone Coverage', description: 'Premium photography and videography service.', price: 12000, defaultSelected: false },
     ],
   },
 };
