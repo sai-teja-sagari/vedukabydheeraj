@@ -17,7 +17,7 @@ import smittenPhoto from '../Images/highlights/03_dance_dip.jpg';
 import beginningsPhoto from '../Images/highlights/02_pre_wedding_splash.jpg';
  
 const WHATSAPP_LINK = 'https://wa.me/919133002002';
-const INSTAGRAM_LINK = 'https://www.instagram.com/dp_fotohub83?stkn=MTA1d3lwNjBtcm0zeA==';
+const INSTAGRAM_LINK = 'https://www.instagram.com/vedukabydheeraj?xtok=MTA1d3lwNjBtcm0zeA==';
 const YOUTUBE_LINK = 'https://youtube.com/@dheerajdandudandu7262?si=JDymXyWXPN9QMlam';
 
 // NOTE: most cards below still show the gradient + camera-icon placeholder.

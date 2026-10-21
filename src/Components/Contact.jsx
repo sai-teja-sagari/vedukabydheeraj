@@ -12,8 +12,8 @@ const WHATSAPP_LINK = 'https://wa.me/919133002002';
 const CONTACT_METHODS_SOURCE = {
   phone: '+91 91330 02002',
   email: STUDIO_EMAIL,
-  address: 'Chaitanya Park, 7H3Q+JMW, Venkateshwara Colony, Tandur, Telangana 501141',
-  mapsUrl: 'https://maps.google.com/?q=Chaitanya+Park+7H3Q%2BJMW+Venkateshwara+Colony+Tandur+Telangana+501141',
+  address: 'Veduka by Dheeraj, Venkateshwara Colony, Tandur, Telangana 501141',
+  mapsUrl: 'https://maps.app.goo.gl/oYMj2V6pR13u2yj37',
 };
 
 const HOURS = [
@@ -247,7 +247,7 @@ function Contact({ onSubmit, standalone = false }) {
               rel="noopener noreferrer"
               className="absolute bottom-3 left-3 text-[10px] text-[#7A6A4A] underline-offset-2 hover:underline"
             >
-              Chaitanya Park, Tandur, Telangana 501141
+              {CONTACT_METHODS_SOURCE.address}
             </a>
           </div>
 
