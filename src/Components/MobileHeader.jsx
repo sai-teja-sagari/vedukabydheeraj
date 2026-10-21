@@ -113,7 +113,7 @@ function MobileHeader({ className = '' }) {
           menuOpen ? 'veduka-mobile-header__overlay--open' : 'pointer-events-none'
         }`}
       >
-        <div ref={panelRef} className="flex h-full flex-col">
+        <div ref={panelRef} className="flex min-h-full flex-col">
           <div className="flex flex-1 flex-col items-center justify-center gap-0">
             {NAV_LINKS.map(({ label, to }) => (
               <Link

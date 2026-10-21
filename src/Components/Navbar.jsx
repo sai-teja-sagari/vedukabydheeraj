@@ -26,13 +26,13 @@ function Navbar() {
       {/* ===== DESKTOP BAR (>= lg) ===== */}
       <nav
         aria-label="Main navigation"
-        className="hidden lg:flex h-[104px] items-center justify-between bg-[#FBF6EC] border-b border-[#DCC98F] px-16"
+        className="hidden lg:flex h-[104px] items-center justify-between bg-[#FBF6EC] border-b border-[#DCC98F] px-8 xl:px-16"
       >
         <Link href="/" onClick={() => setActiveLink('Home')} aria-label="Veduka by Dheeraj home">
           <Image src={logo} alt="Veduka by Dheeraj" priority className="h-[58px] w-auto" />
         </Link>
 
-        <div className="flex items-center gap-11">
+        <div className="flex items-center gap-5 xl:gap-11">
           {NAV_LINKS.map(({ label, to }) => {
             const isActive = currentActive === label;
             return (
@@ -59,7 +59,7 @@ function Navbar() {
         {/* ===== CTA BUTTON (desktop) ===== */}
         <Link
           href="/estimator"
-          className="rounded-full bg-[#C9A227] px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.15em] text-[#FBF6EC] transition-colors hover:bg-[#B08D1F]"
+          className="whitespace-nowrap rounded-full bg-[#C9A227] px-5 py-3.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#FBF6EC] transition-colors hover:bg-[#B08D1F] xl:px-8 xl:tracking-[0.15em]"
         >
           Select your package
         </Link>

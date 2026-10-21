@@ -308,7 +308,7 @@ function FeaturedHighlights() {
       </div>
 
       {/* Floating action buttons — fixed to the viewport, not the gallery row */}
-      <div className="fixed bottom-6 right-5 z-40 flex flex-col items-center gap-3.5 md:bottom-8 md:right-8">
+      <div className="mt-8 flex flex-row items-center justify-center gap-3 lg:fixed lg:bottom-8 lg:right-4 lg:z-40 lg:mt-0 lg:flex-col lg:gap-3.5">
         <a
           href={INSTAGRAM_LINK}
           target="_blank"

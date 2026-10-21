@@ -225,6 +225,8 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   transition: opacity 280ms ease, transform 280ms ease, visibility 280ms ease;
 }
 

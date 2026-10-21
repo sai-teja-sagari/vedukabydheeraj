@@ -28,12 +28,12 @@ function Hero() {
             className="veduka-hero__headline mt-4 leading-[1.05]"
             aria-label="Every celebration deserves a beautiful story"
           >
-            <span aria-hidden="true" className="block text-[30px] font-bold text-[#241C12] lg:text-[56px]">
+            <span aria-hidden="true" className="block text-[30px] font-bold text-[#241C12] lg:text-[54px] xl:text-[56px]">
               Every celebration
             </span>
             <span
               aria-hidden="true"
-              className="veduka-hero__script mt-1 block text-[28px] font-bold text-[#9C7620] lg:mt-0 lg:text-[52px]"
+              className="veduka-hero__script mt-1 block text-balance text-[28px] font-bold text-[#9C7620] lg:mt-0 lg:text-[52px]"
             >
               deserves a beautiful story
             </span>
@@ -81,7 +81,7 @@ function Hero() {
           <PromoBadge />
 
           {/* Main photo */}
-          <div className="absolute right-0 top-0 h-[280px] w-[230px] overflow-hidden rounded-md border-[6px] border-[#FBF6EC] shadow-lg ring-1 ring-[#DCC98F] lg:h-[520px] lg:w-[420px]">
+          <div className="absolute right-0 top-0 h-[280px] w-[calc(100%_-_76px)] max-w-[230px] overflow-hidden rounded-md border-[6px] border-[#FBF6EC] shadow-lg ring-1 ring-[#DCC98F] lg:left-[108px] lg:h-[420px] lg:w-auto lg:max-w-none xl:left-auto xl:h-[520px] xl:w-[420px] xl:max-w-[420px]">
             <Image
               src={heroPhoto}
               alt="Couple in a romantic wedding dip portrait"
