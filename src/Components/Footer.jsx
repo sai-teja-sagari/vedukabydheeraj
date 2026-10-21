@@ -63,6 +63,7 @@ const SOCIAL_LINKS = [
 const DEVELOPER = {
   name: 'Sai Teja Sagari',
   portfolioUrl: 'https://www.linkedin.com/in/sai-teja-sagari/',
+  instagramUrl: 'https://www.instagram.com/sai_teja_sagari?obrf=MXVubnkyaWFmdTVo&utm_source=qr',
 };
 
 const CONTACT_ITEMS = [
@@ -158,21 +159,49 @@ function Footer() {
         <div className="mt-14 border-t border-[#DCC98F] pt-6 md:mt-16">
           <div className="flex flex-col items-center gap-3 text-center md:flex-row md:items-center md:justify-between md:gap-0 md:text-left">
             <p className="text-[13px] text-[#8A7A5E]">© 2026 Veduka by Dheeraj. All Rights Reserved.</p>
-            <p className="text-[13px] text-[#8A7A5E]">
-              Crafted by{' '}
-              {DEVELOPER.portfolioUrl ? (
+            <div className="flex flex-col items-center gap-2 md:items-end">
+              <p className="text-[13px] text-[#8A7A5E]">
+                Crafted by{' '}
+                {DEVELOPER.portfolioUrl ? (
+                  <a
+                    href={DEVELOPER.portfolioUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="veduka-footer__link font-medium text-[#9C7620] hover:text-[#4A3B2A]"
+                  >
+                    {DEVELOPER.name}
+                  </a>
+                ) : (
+                  <span className="font-medium text-[#9C7620]">{DEVELOPER.name}</span>
+                )}
+              </p>
+              <div className="flex items-center gap-3">
+                <a
+                  href={DEVELOPER.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Sai Teja Sagari on Instagram"
+                  className="veduka-footer__social flex h-10 w-10 items-center justify-center rounded-full border border-[#C9A227] text-[#9C7620] hover:border-[#9C7620]"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+                    <circle cx="12" cy="12" r="4.2" />
+                    <circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none" />
+                  </svg>
+                </a>
                 <a
                   href={DEVELOPER.portfolioUrl}
                   target="_blank"
-                  rel="noreferrer"
-                  className="veduka-footer__link font-medium text-[#9C7620] hover:text-[#4A3B2A]"
+                  rel="noopener noreferrer"
+                  aria-label="Sai Teja Sagari on LinkedIn"
+                  className="veduka-footer__social flex h-10 w-10 items-center justify-center rounded-full border border-[#C9A227] text-[#9C7620] hover:border-[#9C7620]"
                 >
-                  {DEVELOPER.name}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M5.2 3.5a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM3.4 9h3.6v11.5H3.4V9Zm5.8 0h3.4v1.6h.05a3.7 3.7 0 0 1 3.35-1.85c3.58 0 4.24 2.35 4.24 5.4v6.35h-3.6v-5.63c0-1.35-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.73H9.2V9Z" />
+                  </svg>
                 </a>
-              ) : (
-                <span className="font-medium text-[#9C7620]">{DEVELOPER.name}</span>
-              )}
-            </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
