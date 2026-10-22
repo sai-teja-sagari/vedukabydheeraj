@@ -13,6 +13,14 @@ const QUICK_LINKS = [
   { label: 'Contact', to: '/contact' },
 ];
 
+const SERVICE_LINKS = [
+  { label: 'Wedding Photography', to: '/wedding-photography' },
+  { label: 'Pre-Wedding Photography', to: '/pre-wedding-photography' },
+  { label: 'Wedding Cinematography', to: '/wedding-cinematography' },
+  { label: 'Event Photography', to: '/event-photography' },
+  { label: 'Birthday Photography', to: '/birthday-photography' },
+];
+
 const CONTACT = {
   address: ['Tandur, Telangana,', 'India'],
   phone: '+91 91330 02002',
@@ -76,10 +84,10 @@ function Footer() {
   return (
     <footer role="contentinfo" className="veduka-footer bg-[#F1E7D2] border-t border-[#DCC98F]">
       <div className="px-6 py-14 md:px-20 md:py-16">
-        <div className="grid grid-cols-1 gap-14 text-center md:grid-cols-[1.3fr_1fr_1.2fr] md:gap-[60px] md:text-left">
+        <div className="grid grid-cols-1 gap-14 text-center md:grid-cols-2 md:gap-10 md:text-left lg:grid-cols-[1.1fr_0.8fr_1fr_1.2fr] lg:gap-8 xl:gap-12">
           {/* ===== BRAND COLUMN ===== */}
           <div className="flex flex-col items-center md:items-start">
-            <Image src={logo} alt="Veduka by Dheeraj" className="h-[46px] md:h-[52px] w-auto" />
+            <Image src={logo} alt="Veduka by Dheeraj" className="h-[52px] md:h-[60px] w-auto" />
 
             <p className="veduka-footer__tagline mt-5 max-w-[260px] italic leading-[1.6] text-[#6B5A42] md:max-w-[300px]">
               Turning your biggest moments into timeless memories, one frame at a time.
@@ -108,6 +116,25 @@ function Footer() {
             </h3>
             <ul className="mt-5 flex flex-col items-center gap-[14px] md:mt-6 md:items-start md:gap-[15px]">
               {QUICK_LINKS.map(({ label, to }) => (
+                <li key={label}>
+                  <Link
+                    href={to}
+                    className="veduka-footer__link text-[14px] text-[#4A3B2A] hover:text-[#9C7620] md:text-[15px]"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ===== SERVICES COLUMN ===== */}
+          <div className="border-t border-[#DCC98F] pt-8 md:border-0 md:pt-0">
+            <h3 className="text-[12px] font-semibold uppercase tracking-widest text-[#9C7620] md:text-[13px]">
+              Services
+            </h3>
+            <ul className="mt-5 flex flex-col items-center gap-[14px] md:mt-6 md:items-start md:gap-[15px]">
+              {SERVICE_LINKS.map(({ label, to }) => (
                 <li key={label}>
                   <Link
                     href={to}

@@ -87,6 +87,12 @@ function reducer(state, action) {
       // Only ever invoked (see Stepper.jsx) for indices already reached,
       // but clamp defensively regardless.
       return withStep(state, Math.min(action.index, state.highestStepReached));
+    case 'RESTORE_STEP_FROM_HISTORY':
+      return {
+        ...state,
+        currentStepIndex: action.index,
+        highestStepReached: Math.max(state.highestStepReached, action.index),
+      };
     case 'UPDATE_CONTACT_FIELD':
       return {
         ...state,
@@ -114,6 +120,8 @@ function EstimatorWizard() {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
   const router = useRouter();
   const headingRef = useRef(null);
+  const lastWrittenStepRef = useRef(state.currentStepIndex);
+  const historyNavigationRef = useRef(false);
   const todayIso = new Date().toISOString().slice(0, 10);
 
   const eventType = state.eventTypeId ? EVENT_TYPES[state.eventTypeId] : null;
@@ -132,13 +140,46 @@ function EstimatorWizard() {
     ? [{ label: 'Category' }, ...ceremonyIds.map((id) => ({ label: CEREMONIES[id].title })), { label: 'Final Step' }]
     : [{ label: 'Category' }, { label: 'Details' }, { label: 'Final Step' }];
 
-  // URL mirroring is cosmetic only (see plan notes) — keeps the address
-  // bar honest so the browser back button doesn't land somewhere
-  // confusing, but a hard refresh mid-flow can't restore selections
-  // since none of this is persisted to storage.
+  // Restore the wizard step when browser Back/Forward moves between the
+  // category entry and the selected event workflow. The event selection
+  // stays in reducer state while the wizard remains mounted.
   useEffect(() => {
-    router.replace(`/estimator?step=${state.currentStepIndex}`, { scroll: false });
-  }, [state.currentStepIndex, router]);
+    const handlePopState = () => {
+      const url = new URL(window.location.href);
+      if (url.pathname !== '/estimator') return;
+
+      const parsedStep = Number(url.searchParams.get('step') ?? 0);
+      const index = Number.isSafeInteger(parsedStep)
+        ? Math.max(0, Math.min(parsedStep, totalSteps - 1))
+        : 0;
+
+      historyNavigationRef.current = true;
+      dispatch({ type: 'RESTORE_STEP_FROM_HISTORY', index });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [totalSteps]);
+
+  // Create one browser-history entry when a category/preset opens its event
+  // workflow. Further ceremony steps replace that entry, so browser Back
+  // returns to the category instead of walking through every wizard step.
+  useEffect(() => {
+    if (historyNavigationRef.current) {
+      historyNavigationRef.current = false;
+      lastWrittenStepRef.current = state.currentStepIndex;
+      return;
+    }
+
+    const stepUrl = `/estimator?step=${state.currentStepIndex}`;
+    const enteringEventWorkflow =
+      lastWrittenStepRef.current === 0 && state.currentStepIndex > 0 && Boolean(state.eventTypeId);
+
+    if (enteringEventWorkflow) router.push(stepUrl, { scroll: false });
+    else router.replace(stepUrl, { scroll: false });
+
+    lastWrittenStepRef.current = state.currentStepIndex;
+  }, [state.currentStepIndex, state.eventTypeId, router]);
 
   // Move focus to the new step's heading after every step change so
   // screen reader / keyboard users land in the right place instead of on
