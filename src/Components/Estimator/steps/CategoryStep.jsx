@@ -50,10 +50,6 @@ function CategoryStep({ headingRef, selectedPresetId, selectedEventTypeId, onSel
           </div>
           <div className="flex gap-3">
             <div className="rounded-lg border border-[#E9DCBB] bg-[#F5EDDC] px-3.5 py-2 text-center">
-              <p className="text-[9.5px] font-semibold uppercase tracking-[0.1em] text-[#9C7620]">Instant</p>
-              <p className="text-[12px] font-semibold text-[#241C12]">PDF breakdown</p>
-            </div>
-            <div className="rounded-lg border border-[#E9DCBB] bg-[#F5EDDC] px-3.5 py-2 text-center">
               <p className="text-[9.5px] font-semibold uppercase tracking-[0.1em] text-[#9C7620]">WhatsApp</p>
               <p className="text-[12px] font-semibold text-[#241C12]">Direct booking</p>
             </div>
