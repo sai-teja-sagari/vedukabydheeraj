@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+Open [https://www.vedukabydheeraj.in/](https://www.vedukabydheeraj.in/) to view the site.
 
 ## Environment variables
 
